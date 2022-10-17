@@ -1,0 +1,56 @@
+
+<odoo>
+    <record id="partner_form_salespersons" model="ir.ui.view">
+        <field name="name">partner.form.salespersons</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='sales_purchases']//field[@name='user_id']" position="after">
+                <field name="salesperson_ids"  widget="many2many_tags" />
+            </xpath>
+            <xpath expr="//page[@name='sales_purchases']//field[@name='user_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="partner_tree_salespersons" model="ir.ui.view">
+        <field name="name">partner.tree.salespersons</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="attributes">
+                <attribute name="optional">hide</attribute>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="salesperson_ids"  widget="many2many_tags" />
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_partner_from_change_salesperson" model="ir.ui.view">
+        <field name="name">partner.update.salesperson.wizard</field>
+        <field name="model">partner.update.salesperson</field>
+        <field name="arch" type="xml">
+            <form string="Change Salesperson">
+                <group>
+                    <field name="user_id" string="Salesperson"/>
+                </group>
+                <footer>
+                    <button string='Update' name="update_partner_salesperson" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_partner_from_change_salesperson_action" model="ir.actions.act_window">
+        <field name="name">Update Customers Salesperson</field>
+        <field name="res_model">partner.update.salesperson</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_partner_from_change_salesperson"/>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="base.model_res_partner"/>
+        <field name="groups_id" eval="[(4, ref('sales_team.group_sale_manager'))]"/>
+    </record>
+</odoo>

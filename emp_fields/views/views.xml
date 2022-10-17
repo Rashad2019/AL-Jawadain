@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_leave_view_form_manager_inherit1" model="ir.ui.view" >
+            <field name="name">hr.leave.view.form.manager.inherit1</field>
+            <field name="model">hr.leave</field>
+            <field name="inherit_id" ref="hr_holidays.hr_leave_view_form_manager"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='employee_id']" position="after">
+                    <field name="manager_user_id" invisible="1" />
+                    <field name="substitute_employee_id"   />
+                </xpath>
+            </field>
+        </record>
+        <record id="hr_leave_view_form_manager_substitute_inherit" model="ir.ui.view" >
+            <field name="name">hr.leave.view.form.manager.substitute.inherit1</field>
+            <field name="model">hr.leave</field>
+            <field name="inherit_id" ref="hr_holidays.hr_leave_view_form_manager"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='substitute_employee_id']" position="attributes">
+                    <attribute name="attrs">
+                        {'readonly':  &quot;['|',('manager_user_id','=' ,False),('manager_user_id','!=' ,uid)]&quot;}
+                    </attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="hr_hr_employee_view_form1" model="ir.ui.view">
+            <field name="name">hr.employee.view.form.inherit1</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//page[@name='hr_settings']" position="after">
+                    <page name="Targets" string="Targets">
+                        <group>
+                            <field name="elhadaf"/>
+                            <field name="perc_hadaf"/>
+                        </group>
+                    </page>
+                    <page name="Sales" string="Sales">
+                        <group>
+                            <field name="sales_total"/>
+                            <field name="perc_sales_total"/>
+                        </group>
+                    </page>
+                    <page name="Collect Money" string="Collect Money">
+                        <group>
+                            <field name="estehsal"/>
+                            <field name="perc_estehsal"/>
+                            <field name="total_estehsal"/>
+                        </group>
+                    </page>
+
+                    <page name="Receipts Entries" string="Receipts Entries">
+                        <group>
+                            <field name="wosolat_ids">
+                                <tree editable="bottom">
+                                    <field name="from1"/>
+                                    <field name="to1"/>
+                                    <field name="date1"/>
+                                </tree>
+                            </field>
+                        </group>
+
+                    </page>
+                    <page name="Loans" string="Loans">
+                        <group>
+                            <field name="solaf_ids" domain="[('date2', '>=', current_date)]">
+                                <tree editable="bottom">
+
+                                    <field name="solaf"/>
+                                    <field name="date1"/>
+                                    <field name="kest"/>
+                                    <field name="date2"/>
+
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                     <page name="Job Name" string="Job Name">
+                        <group>
+                            <field name="job_name"/>
+                        </group>
+                    </page>
+                    <page name="Notes" string="Notes">
+                        <group>
+                            <field name="notes"/>
+                        </group>
+                    </page>
+
+                </xpath>
+
+
+                <xpath expr="//group[@name='identification_group']" position="after">
+
+                        <group name="Custody" >
+                            <field name="elahad"/>
+                        </group>
+                        <group name="Instrument">
+                            <field name="instrument_no"/>
+                            <field name="amount"/>
+                        </group>
+
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

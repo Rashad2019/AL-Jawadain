@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+	<template id="js_excel_button" name="js_excel" inherit_id="web.assets_backend">
+		<xpath expr="." position="inside">
+			<script type="text/javascript" src="/list_export_excel_app/static/src/js/js_excel.js"></script>
+		</xpath>
+	</template>
+    <template id="report_list_pdf">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <div class="row" style="margin-top:10px;">
+                        <div class="col-lg-12">
+                            <h2>
+                                <span>
+<!--                                    <t t-if="len(docs.mapped('project_id')) == 1">-->
+<!--                                        for the <t t-esc="docs.mapped('project_id')[0].name"/> Project-->
+<!--                                    </t>-->
+                                </span>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top:10px;">
+                        <div class="col-lg-12">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <t t-foreach="data['headers_title']" t-as="headers_title">
+                                            <th class="align-middle"><span><t t-esc="headers_title"/></span></th>
+                                        </t>
+                                    </tr>
+                               </thead>
+                               <tbody t-if=" 'lines_data' in data and len(data['lines_data']) > 0" >
+                                    <tr t-foreach="data['lines_data']" t-as="line_data">
+                                        <td t-foreach="line_data" t-as="value">
+                                           <span t-esc="value"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="oe_structure"/>
+				</div>
+            </t>
+        </t>
+    </template>
+
+</odoo>

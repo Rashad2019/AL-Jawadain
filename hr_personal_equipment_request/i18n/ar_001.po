@@ -1,0 +1,516 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_personal_equipment_request
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e-20201202\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-06 18:41+0000\n"
+"PO-Revision-Date: 2022-07-07 00:33+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.1\n"
+
+#. module: hr_personal_equipment_request
+#: model_terms:ir.ui.view,arch_db:hr_personal_equipment_request.hr_personal_equipment_request_form_view
+msgid "Accept"
+msgstr "موافقة"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields.selection,name:hr_personal_equipment_request.selection__hr_personal_equipment__state__accepted
+#: model:ir.model.fields.selection,name:hr_personal_equipment_request.selection__hr_personal_equipment_request__state__accepted
+#: model_terms:ir.ui.view,arch_db:hr_personal_equipment_request.hr_personal_equipment_request_search_view
+#: model_terms:ir.ui.view,arch_db:hr_personal_equipment_request.hr_personal_equipment_search_view
+msgid "Accepted"
+msgstr "تمت الموافقة"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__message_needaction
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__message_needaction
+msgid "Action Needed"
+msgstr "الإجراء مطلوب"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__activity_ids
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__activity_ids
+msgid "Activities"
+msgstr "النشاطات"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__activity_exception_decoration
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "ترتيب استثناء النشاط"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__activity_state
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__activity_type_icon
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model,name:hr_personal_equipment_request.model_hr_personal_equipment
+msgid "Adds personal equipment information and allocation"
+msgstr "يضيف معلومات المعدات المكتبية و المخصصات"
+
+#. module: hr_personal_equipment_request
+#: code:addons/hr_personal_equipment_request/models/hr_personal_equipment_request.py:0
+#: model:ir.actions.act_window,name:hr_personal_equipment_request.hr_personal_equipment_act_window
+#: model:ir.ui.menu,name:hr_personal_equipment_request.hr_personal_equipment_allocations_menu
+#: model_terms:ir.ui.view,arch_db:hr_personal_equipment_request.hr_personal_equipment_request_form_view
+#, python-format
+msgid "Allocations"
+msgstr "التخصيصات"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__allocations_count
+msgid "Allocations Count"
+msgstr "عدد المخصصات"
+
+#. module: hr_personal_equipment_request
+#: model_terms:ir.ui.view,arch_db:hr_personal_equipment_request.hr_personal_equipment_request_form_view
+msgid "Are you sure you want to accept this personal equipment request?"
+msgstr "هل أنت متأكد أنك تريد قبول الطلب هذا؟"
+
+#. module: hr_personal_equipment_request
+#: model_terms:ir.ui.view,arch_db:hr_personal_equipment_request.hr_personal_equipment_request_form_view
+msgid "Are you sure you want to cancel this personal equipment request?"
+msgstr "هل أنت متأكد أنك تريد الغاء الطلب هذا؟"
+
+#. module: hr_personal_equipment_request
+#: model_terms:ir.ui.view,arch_db:hr_personal_equipment_request.hr_personal_equipment_form_view
+msgid "Are you sure you want to expire this personal equipment allocation?"
+msgstr "هل أنت متأكد أنك تريد انهاء الطلب هذا؟"
+
+#. module: hr_personal_equipment_request
+#: model_terms:ir.ui.view,arch_db:hr_personal_equipment_request.hr_personal_equipment_form_view
+#: model_terms:ir.ui.view,arch_db:hr_personal_equipment_request.hr_personal_equipment_request_form_view
+msgid "Are you sure you want to validate this personal equipment allocation?"
+msgstr "هل أنت متأكد أنك تريد التحقق الطلب هذا؟"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__message_attachment_count
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: hr_personal_equipment_request
+#: model_terms:ir.ui.view,arch_db:hr_personal_equipment_request.hr_personal_equipment_request_form_view
+msgid "Cancel"
+msgstr "الغاء"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields.selection,name:hr_personal_equipment_request.selection__hr_personal_equipment__state__cancelled
+#: model:ir.model.fields.selection,name:hr_personal_equipment_request.selection__hr_personal_equipment_request__state__cancelled
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__create_uid
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__create_uid
+msgid "Created by"
+msgstr "انشئ بواسطه"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__create_date
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__create_date
+msgid "Created on"
+msgstr "انشئ بتاريخ"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__display_name
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__display_name
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_product_template__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields.selection,name:hr_personal_equipment_request.selection__hr_personal_equipment__state__draft
+#: model:ir.model.fields.selection,name:hr_personal_equipment_request.selection__hr_personal_equipment_request__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model,name:hr_personal_equipment_request.model_hr_employee
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__employee_id
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__employee_id
+#: model_terms:ir.ui.view,arch_db:hr_personal_equipment_request.hr_personal_equipment_search_view
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: hr_personal_equipment_request
+#: model_terms:ir.ui.view,arch_db:hr_personal_equipment_request.hr_personal_equipment_form_view
+#: model_terms:ir.ui.view,arch_db:hr_personal_equipment_request.product_template_form_view
+msgid "Employee Personal Equipment"
+msgstr "المعدات المكتبية للموظفين"
+
+#. module: hr_personal_equipment_request
+#: model_terms:ir.ui.view,arch_db:hr_personal_equipment_request.hr_personal_equipment_tree_view
+msgid "Employee Personal Equipments"
+msgstr "المعدات المكتبية للموظفين"
+
+#. module: hr_personal_equipment_request
+#: code:addons/hr_personal_equipment_request/models/hr_employee.py:0
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_employee__equipment_request_ids
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__equipment_request_id
+#, python-format
+msgid "Equipment Request"
+msgstr "طلب معدات مكتبية"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_employee__equipment_request_count
+msgid "Equipment Request Count"
+msgstr "عدد الطلبات المكتبية"
+
+#. module: hr_personal_equipment_request
+#: model_terms:ir.ui.view,arch_db:hr_personal_equipment_request.hr_personal_equipment_form_view
+msgid "Expire"
+msgstr "انهاء"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields.selection,name:hr_personal_equipment_request.selection__hr_personal_equipment__state__expired
+#: model_terms:ir.ui.view,arch_db:hr_personal_equipment_request.hr_personal_equipment_search_view
+msgid "Expired"
+msgstr "منتهية"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__expiry_date
+msgid "Expiry Date"
+msgstr "تاريخ الانتهاء"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__message_follower_ids
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__message_follower_ids
+msgid "Followers"
+msgstr "المتابعين"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__message_channel_ids
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "المتابعون (القنوات)"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__message_partner_ids
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,help:hr_personal_equipment_request.field_hr_personal_equipment__activity_type_icon
+#: model:ir.model.fields,help:hr_personal_equipment_request.field_hr_personal_equipment_request__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "e.g. fa-tasks ايقونة"
+
+#. module: hr_personal_equipment_request
+#: model_terms:ir.ui.view,arch_db:hr_personal_equipment_request.hr_personal_equipment_search_view
+msgid "Group By"
+msgstr "التجميع بحسب"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_employee__id
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__id
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__id
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_product_template__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__activity_exception_icon
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__activity_exception_icon
+msgid "Icon"
+msgstr "أيقونة"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,help:hr_personal_equipment_request.field_hr_personal_equipment__activity_exception_icon
+#: model:ir.model.fields,help:hr_personal_equipment_request.field_hr_personal_equipment_request__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة نوع النشاط"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,help:hr_personal_equipment_request.field_hr_personal_equipment__message_needaction
+#: model:ir.model.fields,help:hr_personal_equipment_request.field_hr_personal_equipment__message_unread
+#: model:ir.model.fields,help:hr_personal_equipment_request.field_hr_personal_equipment_request__message_needaction
+#: model:ir.model.fields,help:hr_personal_equipment_request.field_hr_personal_equipment_request__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديدها ، فإن الرسائل الجديدة تتطلب انتباهك."
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,help:hr_personal_equipment_request.field_hr_personal_equipment__message_has_error
+#: model:ir.model.fields,help:hr_personal_equipment_request.field_hr_personal_equipment__message_has_sms_error
+#: model:ir.model.fields,help:hr_personal_equipment_request.field_hr_personal_equipment_request__message_has_error
+#: model:ir.model.fields,help:hr_personal_equipment_request.field_hr_personal_equipment_request__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: hr_personal_equipment_request
+#: model_terms:ir.ui.view,arch_db:hr_personal_equipment_request.hr_personal_equipment_request_search_view
+#: model_terms:ir.ui.view,arch_db:hr_personal_equipment_request.hr_personal_equipment_search_view
+msgid "In Draft"
+msgstr "مسودة"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_product_product__is_personal_equipment
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_product_template__is_personal_equipment
+msgid "Is Employee Personal Equipment"
+msgstr " معدات مكتبية للموظفين"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__message_is_follower
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_employee____last_update
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment____last_update
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request____last_update
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_product_template____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__write_uid
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__write_uid
+msgid "Last Updated by"
+msgstr "اخر تحديث بواسطه"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__write_date
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__write_date
+msgid "Last Updated on"
+msgstr "اخر تحديث في"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__message_main_attachment_id
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الاساسي"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__message_has_error
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__message_ids
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__name
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__activity_date_deadline
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__activity_summary
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__activity_type_id
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__message_needaction_counter
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__message_has_error_counter
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,help:hr_personal_equipment_request.field_hr_personal_equipment__message_needaction_counter
+#: model:ir.model.fields,help:hr_personal_equipment_request.field_hr_personal_equipment_request__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,help:hr_personal_equipment_request.field_hr_personal_equipment__message_has_error_counter
+#: model:ir.model.fields,help:hr_personal_equipment_request.field_hr_personal_equipment_request__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,help:hr_personal_equipment_request.field_hr_personal_equipment__message_unread_counter
+#: model:ir.model.fields,help:hr_personal_equipment_request.field_hr_personal_equipment_request__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عداد الرسائل الغير مقروءة"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__observations
+#: model_terms:ir.ui.view,arch_db:hr_personal_equipment_request.hr_personal_equipment_request_form_view
+msgid "Observations"
+msgstr "الملاحظات"
+
+#. module: hr_personal_equipment_request
+#: model_terms:ir.ui.view,arch_db:hr_personal_equipment_request.hr_employee_form_view
+msgid "PE"
+msgstr "المعدات المكتبية"
+
+#. module: hr_personal_equipment_request
+#: model_terms:ir.ui.view,arch_db:hr_personal_equipment_request.hr_employee_form_view
+msgid "PE Request"
+msgstr "الطلبات المكتبية"
+
+#. module: hr_personal_equipment_request
+#: code:addons/hr_personal_equipment_request/models/hr_employee.py:0
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_employee__personal_equipment_ids
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__line_ids
+#: model:ir.ui.menu,name:hr_personal_equipment_request.hr_personal_equipment_menu
+#: model_terms:ir.ui.view,arch_db:hr_personal_equipment_request.hr_personal_equipment_request_form_view
+#, python-format
+msgid "Personal Equipment"
+msgstr "طلبات مكتبية"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_employee__personal_equipment_count
+msgid "Personal Equipment Count"
+msgstr "المعدات المكتبية"
+
+#. module: hr_personal_equipment_request
+#: model:ir.actions.act_window,name:hr_personal_equipment_request.hr_personal_equipment_request_act_window
+#: model:ir.ui.menu,name:hr_personal_equipment_request.hr_personal_equipment_request_menu
+msgid "Personal Equipment Request"
+msgstr "طلب معدات مكتبية"
+
+#. module: hr_personal_equipment_request
+#: code:addons/hr_personal_equipment_request/models/hr_personal_equipment_request.py:0
+#, python-format
+msgid "Personal Equipment Request by %s"
+msgstr "طلب معدات مكتبية من قبل %s"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__product_id
+#: model_terms:ir.ui.view,arch_db:hr_personal_equipment_request.hr_personal_equipment_search_view
+msgid "Product"
+msgstr "المنتج"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model,name:hr_personal_equipment_request.model_product_template
+msgid "Product Template"
+msgstr "قالب المنتج"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__quantity
+msgid "Quantity"
+msgstr "اجمالي الكمية"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__activity_user_id
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__message_has_sms_error
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__start_date
+msgid "Start Date"
+msgstr "تاريخ البدء"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__state
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__state
+#: model_terms:ir.ui.view,arch_db:hr_personal_equipment_request.hr_personal_equipment_search_view
+msgid "State"
+msgstr "الحالة"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,help:hr_personal_equipment_request.field_hr_personal_equipment__activity_state
+#: model:ir.model.fields,help:hr_personal_equipment_request.field_hr_personal_equipment_request__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الوضع على أساس الأنشطة\n"
+"متأخر: تاريخ الاستحقاق فات بالفعل\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخطط له: الأنشطة المستقبلية."
+
+#. module: hr_personal_equipment_request
+#: model:ir.model,name:hr_personal_equipment_request.model_hr_personal_equipment_request
+msgid "This model allows to create a personal equipment request"
+msgstr "يسمح هذا النموذج بإنشاء طلب معدات شخصية"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,help:hr_personal_equipment_request.field_hr_personal_equipment__activity_exception_decoration
+#: model:ir.model.fields,help:hr_personal_equipment_request.field_hr_personal_equipment_request__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع نشاط الاستثناء المسجل."
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__product_uom_id
+msgid "Unit of Measure"
+msgstr "وحدة القياس"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__message_unread
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__message_unread
+msgid "Unread Messages"
+msgstr "الرسائل الغير مقروءة"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__message_unread_counter
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عداد الرسائل الغير مقروءة"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields.selection,name:hr_personal_equipment_request.selection__hr_personal_equipment__state__valid
+#: model_terms:ir.ui.view,arch_db:hr_personal_equipment_request.hr_personal_equipment_search_view
+msgid "Valid"
+msgstr "تم التحقق"
+
+#. module: hr_personal_equipment_request
+#: model_terms:ir.ui.view,arch_db:hr_personal_equipment_request.hr_personal_equipment_form_view
+#: model_terms:ir.ui.view,arch_db:hr_personal_equipment_request.hr_personal_equipment_request_form_view
+msgid "Validate"
+msgstr "تحقق"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment__website_message_ids
+#: model:ir.model.fields,field_description:hr_personal_equipment_request.field_hr_personal_equipment_request__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الالكتروني"
+
+#. module: hr_personal_equipment_request
+#: model:ir.model.fields,help:hr_personal_equipment_request.field_hr_personal_equipment__website_message_ids
+#: model:ir.model.fields,help:hr_personal_equipment_request.field_hr_personal_equipment_request__website_message_ids
+msgid "Website communication history"
+msgstr "سجلات اتصال الموقع الالكتروني"

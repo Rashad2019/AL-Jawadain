@@ -1,0 +1,282 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules: 
+# 	* chili_training
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e-20201202\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-05 20:14+0000\n"
+"PO-Revision-Date: 2022-07-05 23:23+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: ar\n"
+"X-Generator: Poedit 2.2.4\n"
+
+#. module: chili_training
+#: model:ir.model.fields,field_description:chili_training.field_employee_training__name
+msgid " Course Name"
+msgstr "اسم الكورس"
+
+#. module: chili_training
+#: model:ir.model.fields,field_description:chili_training.field_employee_punish__amount
+msgid "Amount"
+msgstr "القيمة"
+
+#. module: chili_training
+#: model:ir.model.fields,field_description:chili_training.field_employee_training__doc_attachment_id
+msgid "Attachment"
+msgstr "المرفق"
+
+#. module: chili_training
+#: model:ir.model.fields.selection,name:chili_training.selection__employee_training__status__cancel
+#: model:ir.model.fields.selection,name:chili_training.selection__hr_training__status__cancel
+msgid "Cancel"
+msgstr "ملغي"
+
+#. module: chili_training
+#: model:ir.model.fields,field_description:chili_training.field_employee_punish__company_id
+#: model:ir.model.fields,field_description:chili_training.field_employee_training__company_id
+#: model:ir.model.fields,field_description:chili_training.field_hr_training__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: chili_training
+#: model:ir.model.fields,field_description:chili_training.field_employee_training__course_subject
+#: model:ir.model.fields,field_description:chili_training.field_hr_training__course_subject
+msgid "Course Subject"
+msgstr "موضوع الكورس"
+
+#. module: chili_training
+#: model:ir.model.fields,field_description:chili_training.field_employee_punish__create_uid
+#: model:ir.model.fields,field_description:chili_training.field_employee_punish_type__create_uid
+#: model:ir.model.fields,field_description:chili_training.field_employee_training__create_uid
+#: model:ir.model.fields,field_description:chili_training.field_hr_training__create_uid
+msgid "Created by"
+msgstr "انشئ بواسطه"
+
+#. module: chili_training
+#: model:ir.model.fields,field_description:chili_training.field_employee_punish__create_date
+#: model:ir.model.fields,field_description:chili_training.field_employee_punish_type__create_date
+#: model:ir.model.fields,field_description:chili_training.field_employee_training__create_date
+#: model:ir.model.fields,field_description:chili_training.field_hr_training__create_date
+msgid "Created on"
+msgstr "انشئ بتاريخ"
+
+#. module: chili_training
+#: model:ir.model.fields,field_description:chili_training.field_employee_punish__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: chili_training
+#: model:ir.model.fields,field_description:chili_training.field_employee_punish__date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: chili_training
+#: model:ir.model.fields,field_description:chili_training.field_employee_punish__description
+#: model:ir.model.fields,field_description:chili_training.field_employee_training__description
+#: model:ir.model.fields,field_description:chili_training.field_hr_training__description
+msgid "Description"
+msgstr "الوصف"
+
+#. module: chili_training
+#: model:ir.model.fields,field_description:chili_training.field_employee_punish__display_name
+#: model:ir.model.fields,field_description:chili_training.field_employee_punish_type__display_name
+#: model:ir.model.fields,field_description:chili_training.field_employee_training__display_name
+#: model:ir.model.fields,field_description:chili_training.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:chili_training.field_hr_training__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: chili_training
+#: model:ir.model.fields.selection,name:chili_training.selection__employee_training__status__done
+#: model:ir.model.fields.selection,name:chili_training.selection__hr_training__status__done
+msgid "Done"
+msgstr "مكتمل"
+
+#. module: chili_training
+#: model:ir.model,name:chili_training.model_hr_employee
+#: model:ir.model.fields,field_description:chili_training.field_employee_punish__employee_id
+#: model:ir.model.fields,field_description:chili_training.field_employee_training__employee_id
+#: model:ir.model.fields,field_description:chili_training.field_hr_training__employee_ids
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: chili_training
+#: model_terms:ir.ui.view,arch_db:chili_training.hr_award_tree_view
+#: model_terms:ir.ui.view,arch_db:chili_training.inherited_hr_employee_form_view_added_field
+msgid "Employee Award"
+msgstr "مكافأة"
+
+#. module: chili_training
+#: model_terms:ir.ui.view,arch_db:chili_training.inherited_hr_employee_form_view_added_field
+msgid "Employee Rewards"
+msgstr "مكافأة"
+
+#. module: chili_training
+#: model:ir.actions.act_window,name:chili_training.action_employee_training
+#: model:ir.model,name:chili_training.model_employee_training
+#: model:ir.ui.menu,name:chili_training.menu_employee_training_
+#: model_terms:ir.ui.view,arch_db:chili_training.hr_employee_training_form_view
+#: model_terms:ir.ui.view,arch_db:chili_training.hr_employee_training_program_tree_view
+#: model_terms:ir.ui.view,arch_db:chili_training.inherited_hr_employee_form_view_added_field
+msgid "Employee Training"
+msgstr "تدريبات الموظفين"
+
+#. module: chili_training
+#: model:ir.actions.act_window,name:chili_training.action_hr_punish
+#: model:ir.model,name:chili_training.model_employee_punish
+#: model:ir.ui.menu,name:chili_training.menu_hr_award
+#: model_terms:ir.ui.view,arch_db:chili_training.hr_award_form_view
+msgid "Employee punish"
+msgstr "العقوبات"
+
+#. module: chili_training
+#: model_terms:ir.ui.view,arch_db:chili_training.hr_training_program_form_view
+msgid "Employees"
+msgstr "الموظفين"
+
+#. module: chili_training
+#: model:ir.model.fields,field_description:chili_training.field_employee_training__from_date
+#: model:ir.model.fields,field_description:chili_training.field_hr_training__from_date
+msgid "From Date"
+msgstr "من تاريخ"
+
+#. module: chili_training
+#: model:ir.actions.act_window,name:chili_training.action_hr_training
+#: model:ir.ui.menu,name:chili_training.menu_hr_training_
+#: model_terms:ir.ui.view,arch_db:chili_training.hr_training_program_form_view
+#: model_terms:ir.ui.view,arch_db:chili_training.hr_training_program_tree_view
+msgid "HR Training"
+msgstr "التدريبات"
+
+#. module: chili_training
+#: model:ir.model.fields.selection,name:chili_training.selection__employee_training__status__hold
+#: model:ir.model.fields.selection,name:chili_training.selection__hr_training__status__hold
+msgid "Hold"
+msgstr "في الانتظار"
+
+#. module: chili_training
+#: model:ir.model.fields,field_description:chili_training.field_employee_punish__id
+#: model:ir.model.fields,field_description:chili_training.field_employee_punish_type__id
+#: model:ir.model.fields,field_description:chili_training.field_employee_training__id
+#: model:ir.model.fields,field_description:chili_training.field_hr_employee__id
+#: model:ir.model.fields,field_description:chili_training.field_hr_training__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: chili_training
+#: model:ir.model.fields,field_description:chili_training.field_employee_punish____last_update
+#: model:ir.model.fields,field_description:chili_training.field_employee_punish_type____last_update
+#: model:ir.model.fields,field_description:chili_training.field_employee_training____last_update
+#: model:ir.model.fields,field_description:chili_training.field_hr_employee____last_update
+#: model:ir.model.fields,field_description:chili_training.field_hr_training____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: chili_training
+#: model:ir.model.fields,field_description:chili_training.field_employee_punish__write_uid
+#: model:ir.model.fields,field_description:chili_training.field_employee_punish_type__write_uid
+#: model:ir.model.fields,field_description:chili_training.field_employee_training__write_uid
+#: model:ir.model.fields,field_description:chili_training.field_hr_training__write_uid
+msgid "Last Updated by"
+msgstr "اخر تحديث بواسطه"
+
+#. module: chili_training
+#: model:ir.model.fields,field_description:chili_training.field_employee_punish__write_date
+#: model:ir.model.fields,field_description:chili_training.field_employee_punish_type__write_date
+#: model:ir.model.fields,field_description:chili_training.field_employee_training__write_date
+#: model:ir.model.fields,field_description:chili_training.field_hr_training__write_date
+msgid "Last Updated on"
+msgstr "اخر تحديث في"
+
+#. module: chili_training
+#: model:ir.model.fields,field_description:chili_training.field_employee_punish__name
+#: model:ir.model.fields,field_description:chili_training.field_employee_punish_type__name
+#: model:ir.model.fields,field_description:chili_training.field_hr_training__name
+#: model_terms:ir.ui.view,arch_db:chili_training.hr_employee_training_form_view
+#: model_terms:ir.ui.view,arch_db:chili_training.hr_training_program_form_view
+#: model_terms:ir.ui.view,arch_db:chili_training.inherited_hr_employee_form_view_added_field
+msgid "Name"
+msgstr "الاسم"
+
+#. module: chili_training
+#: model_terms:ir.ui.view,arch_db:chili_training.inherited_hr_employee_form_view_added_field
+msgid "Punish"
+msgstr "العقوبه"
+
+#. module: chili_training
+#: model:ir.model.fields,field_description:chili_training.field_employee_punish__ttype
+msgid "Punish Type"
+msgstr "نوع العقوبه"
+
+#. module: chili_training
+#: model:ir.model.fields,field_description:chili_training.field_employee_training__result
+msgid "Result"
+msgstr "النتيجة"
+
+#. module: chili_training
+#: model_terms:ir.ui.view,arch_db:chili_training.inherited_hr_employee_form_view_added_field
+msgid "Training and Punishes"
+msgstr "التدريبات و العقوبات"
+
+#. module: chili_training
+#: model:ir.model.fields.selection,name:chili_training.selection__employee_training__status__running
+#: model:ir.model.fields.selection,name:chili_training.selection__hr_training__status__running
+msgid "Running"
+msgstr "قيد التنفيذ"
+
+#. module: chili_training
+#: model:ir.model.fields,field_description:chili_training.field_employee_training__status
+#: model:ir.model.fields,field_description:chili_training.field_hr_training__status
+msgid "Status"
+msgstr "الحالة"
+
+#. module: chili_training
+#: model:ir.model.fields,field_description:chili_training.field_employee_training__to_date
+#: model:ir.model.fields,field_description:chili_training.field_hr_training__to_date
+msgid "To Date"
+msgstr "الى تاريخ"
+
+#. module: chili_training
+#: model:ir.model.fields.selection,name:chili_training.selection__employee_training__status__start
+#: model:ir.model.fields.selection,name:chili_training.selection__hr_training__status__start
+msgid "To Start"
+msgstr "للبدأ"
+
+#. module: chili_training
+#: model:ir.model,name:chili_training.model_hr_training
+#: model:ir.model.fields,field_description:chili_training.field_hr_employee__training_ids
+#: model_terms:ir.ui.view,arch_db:chili_training.inherited_hr_employee_form_view_added_field
+msgid "Training"
+msgstr "التدريب"
+
+#. module: chili_training
+#: model:ir.model.fields,field_description:chili_training.field_employee_training__training_cost
+msgid "Training Cost"
+msgstr "تكلفة التدريب"
+
+#. module: chili_training
+#: model:ir.model.fields,field_description:chili_training.field_employee_training__hr_training_id
+msgid "Training Program"
+msgstr "برنامج التدريب"
+
+#. module: chili_training
+#: model:ir.model.fields,help:chili_training.field_employee_training__doc_attachment_id
+msgid "You can attach the copy of your document"
+msgstr "شهادة التدريب"
+
+#. module: chili_training
+#: model:ir.model,name:chili_training.model_employee_punish_type
+msgid "employee.punish.type"
+msgstr ""
+
+#. module: chili_training
+#: model:ir.model.fields,field_description:chili_training.field_hr_employee__punish_ids
+msgid "العقويات"
+msgstr ""

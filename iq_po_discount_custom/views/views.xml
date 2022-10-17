@@ -1,0 +1,46 @@
+<odoo>
+	<data>
+		<record id="iq_purchase_order_form_bi_inherit" model="ir.ui.view">
+			<field name="name">purchase.order.form.bi.inherit</field>
+			<field name="model">purchase.order</field>
+			<field name="inherit_id" ref="purchase.purchase_order_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//notebook/page/field[@name='order_line']/tree/field[@name='price_unit']" position="after">
+					<field name="iq_disc" />
+                </xpath>
+  				<xpath expr="//form/sheet/group/group/field[@name='currency_id']" position="after">
+					<field name="iq_discount_type" />
+					<field name="iq_discount_amount" />
+				</xpath>
+			</field>
+		</record>
+		<record id="iq_purchase_order_form_bi_inherit_hide_invoice" model="ir.ui.view">
+			<field name="name">purchase.order.form.bi.inherit.hide.invoice</field>
+			<field name="model">purchase.order</field>
+			<field name="inherit_id" ref="purchase.purchase_order_form" />
+<!--        	<field name="groups_id" eval="[(6, 0, [ref('account.group_account_invoice'),ref('account.group_account_manager')])]"/>-->
+			<field name="arch" type="xml">
+				<xpath expr="(//header/button[@name='action_create_invoice'][1])" position="attributes">
+                	<attribute name="invisible">True</attribute>
+            	</xpath>
+				<xpath expr="(//header/button[@name='action_create_invoice'][2])" position="attributes">
+                	<attribute name="invisible">True</attribute>
+            	</xpath>
+			</field>
+		</record>
+		<record id="iq_purchase_order_form_bi_inherit_show_invoice" model="ir.ui.view">
+			<field name="name">purchase.order.form.bi.inherit.show.invoice</field>
+			<field name="model">purchase.order</field>
+			<field name="inherit_id" ref="purchase.purchase_order_form" />
+        	<field name="groups_id" eval="[(6, 0, [ref('account.group_account_invoice'),ref('account.group_purchase_receipts'),ref('account.group_account_user'),ref('account.group_account_manager')])]"/>
+			<field name="arch" type="xml">
+				<xpath expr="(//header/button[@name='action_create_invoice'][1])" position="attributes">
+                	<attribute name="invisible">False</attribute>
+            	</xpath>
+				<xpath expr="(//header/button[@name='action_create_invoice'][2])" position="attributes">
+                	<attribute name="invisible">False</attribute>
+            	</xpath>
+			</field>
+		</record>
+	</data>
+</odoo>

@@ -1,0 +1,120 @@
+<odoo>
+
+
+	<record id="iq_inherit_producttemplateproddatefields_form" model="ir.ui.view">
+		<field name="name">iq.inherit.proddateproductsfields.form</field>
+		<field name="model">product.template</field>
+		<field name="inherit_id" ref="product.product_template_only_form_view" />
+		<field name="arch" type="xml">
+
+
+		<xpath expr="//field[@name='barcode']" position="after">
+			<field name="use_expiration_date" invisible="1" />
+			<field name="iq_prod_date" attrs="{
+						'invisible': [ ('use_expiration_date', '=', True)]
+					}"/>
+		</xpath>
+		</field>
+		</record>
+
+	<record id="iq_inherit_producttemplateproddatefields_form" model="ir.ui.view">
+		<field name="name">iq.inherit.proddateproductsfields.form</field>
+		<field name="model">product.template</field>
+		<field name="inherit_id" ref="product.product_template_only_form_view" />
+		<field name="arch" type="xml">
+		
+		
+		<xpath expr="//field[@name='barcode']" position="after">
+			<field name="use_expiration_date" invisible="1" />
+
+			<field name="iq_prod_date" attrs="{
+						'invisible': [ ('use_expiration_date', '=', True)]
+					}"/>
+		</xpath>
+		</field>
+		</record>
+		
+		
+		
+	<record id="iq_inherit_productproddatefields_form" model="ir.ui.view">
+		<field name="name">iq.inherit.proddateproductsfields.form</field>
+		<field name="model">product.product</field>
+		<field name="inherit_id" ref="product.product_normal_form_view" />
+		<field name="arch" type="xml">
+		
+		
+		<xpath expr="//field[@name='barcode']" position="after">
+			<field name="use_expiration_date" invisible="1" />
+
+			<field name="iq_prod_date" attrs="{
+						'invisible': [ ('use_expiration_date', '=', True)]
+					}"/>
+		</xpath>
+		</field>
+		</record>
+		
+		
+			<record id="iq_inherit_productproddatelotfields_form" model="ir.ui.view">
+		<field name="name">iq.inherit.proddateproductslotsfields.form</field>
+		<field name="model">stock.production.lot</field>
+		<field name="inherit_id" ref="stock.view_production_lot_form" />
+		<field name="arch" type="xml">
+		
+		
+		 <xpath expr="//field[@name='company_id']" position="after">
+		<field name="iq_prod_date"/>
+		</xpath>
+		</field>
+		</record>
+		
+		
+		
+		
+			<record id="iq_inherit_productproddatquantfields_form" model="ir.ui.view">
+		<field name="name">iq.inherit.proddateproductsquantfields.form</field>
+		<field name="model">stock.quant</field>
+		<field name="inherit_id" ref="stock.view_stock_quant_tree_editable" />
+		<field name="arch" type="xml">
+		
+		
+		 <xpath expr="//field[@name='lot_id']" position="after">
+		<field name="iq_prod_date"/>
+		</xpath>
+		</field>
+		</record>
+		
+		
+		
+		
+		<record id="iq_inherit_productproddatmovesfields_form" model="ir.ui.view">
+		<field name="name">iq.inherit.proddateproductsmovesfields.form</field>
+		<field name="model">stock.move.line</field>
+		<field name="inherit_id" ref="stock.view_stock_move_line_detailed_operation_tree" />
+		<field name="arch" type="xml">
+		
+		
+		   <xpath expr="//field[@name='lot_name']" position="after">
+		<field name="iq_prod_date"/>
+		</xpath>
+		</field>
+		</record>
+		
+		
+		<record id="iq_inherit_productproddatmoveslinesfields_form" model="ir.ui.view">
+		<field name="name">iq.inherit.proddateproductsmovesfieldslines.form</field>
+		<field name="model">stock.move.line</field>
+		<field name="inherit_id" ref="stock.view_stock_move_line_operation_tree" />
+		<field name="arch" type="xml">
+		
+		
+		   <xpath expr="//field[@name='lot_name']" position="after">
+		<field name="iq_prod_date" />
+		</xpath>
+		</field>
+		</record>
+		
+		
+		
+		
+		
+</odoo>

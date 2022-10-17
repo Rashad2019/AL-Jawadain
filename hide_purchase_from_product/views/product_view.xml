@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <record id="product_template_form_view_hide_purchase" model="ir.ui.view">
+            <field name="name">product.template.form.inherit.hide.purchase</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="groups_id" eval="[(6, 0, [ref('hide_purchase_from_product.hide_purchase_on_product_group_id')])]"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='purchase']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

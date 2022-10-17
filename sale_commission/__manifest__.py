@@ -1,0 +1,27 @@
+
+{
+    "name": "Sales commissions",
+    "version": "14.0.1.0.0",
+    "category": "sales",
+    "author": 'RASHAD ALKHAWLANI - SMART BUSINESS TECH ',
+    'website': 'https://www.smart-bt.com',
+    "depends": ["account", "product", "sale_management"],
+    "data": [
+        "security/ir.model.access.csv",
+        "security/sale_commission_security.xml",
+        "views/sale_commission_view.xml",
+        "views/commission_product.xml",
+        "views/sale_commission_mixin_views.xml",
+        "views/product_template_view.xml",
+        "views/res_partner_view.xml",
+        "views/sale_order_view.xml",
+        "views/account_move_views.xml",
+        "views/sale_commission_settlement_view.xml",
+        "views/sale_commission_settlement_report.xml",
+        "views/report_settlement_templates.xml",
+        "report/sale_commission_analysis_report_view.xml",
+        "wizard/wizard_settle.xml",
+        "wizard/wizard_invoice.xml",
+    ],
+    "installable": True,
+}

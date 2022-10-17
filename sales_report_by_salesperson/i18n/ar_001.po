@@ -1,0 +1,29 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sales_report_by_salesperson
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0-20211223\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-21 17:06+0000\n"
+"PO-Revision-Date: 2022-05-21 20:08+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"Language: ar\n"
+"X-Generator: Poedit 2.2.4\n"
+
+#. module: sales_report_by_salesperson
+#: model_terms:ir.ui.view,arch_db:sales_report_by_salesperson.view_order_product_search_inherit
+msgid "Order Date"
+msgstr "التاريخ"
+
+#. module: sales_report_by_salesperson
+#: model:ir.actions.act_window,name:sales_report_by_salesperson.action_order_report_all_new
+#: model:ir.ui.menu,name:sales_report_by_salesperson.menu_sale_report_wizard
+msgid "Salespersons Reports"
+msgstr "تقارير مندوبي المبيعات"

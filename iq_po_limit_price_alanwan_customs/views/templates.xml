@@ -1,0 +1,45 @@
+<odoo>
+    <data>
+  <record id="iq_po_limit_inherited_form_view" model="ir.ui.view">
+            <field name="name">f.new.po.limit.inherited.view</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="purchase.res_config_settings_view_form_purchase"/>
+            <field name="arch" type="xml">
+               <xpath expr="//div[@data-key='purchase']" position="inside">
+               <h2>Purchase Limit</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box" title="(Enable Limit on Purchase Order).">
+                            <div class="o_setting_left_pane">
+                                <field name="limit_on_po_amount" />
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="limit_on_po_amount"/>
+                                <div class="text-muted">
+                                    Enable Limit on Purchase Order
+                                </div>
+                            </div>
+                        </div>
+                        
+                         <div class="col-12 col-lg-6 o_setting_box" title="( Amount Limit).">
+                            <div class="o_setting_left_pane">
+                             <label for="po_amount" attrs="{'invisible': [('limit_on_po_amount', '=', False)]}"/>
+                              
+                            </div>
+                            <div class="o_setting_right_pane">
+                                 <field name="po_amount" attrs="{'invisible': [('limit_on_po_amount', '=', False)]}" />
+                               
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        </div>
+               
+                    
+
+            </xpath>
+            
+            </field>
+        </record>
+    </data>
+</odoo>

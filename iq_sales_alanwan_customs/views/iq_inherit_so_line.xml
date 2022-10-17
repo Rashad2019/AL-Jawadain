@@ -1,0 +1,53 @@
+ 
+ 
+ <odoo>
+ 
+    <record id="iq_inheritsalepickingview_form_inherit_sections" model="ir.ui.view">
+        <field name="name">iq_inheritsalespickingview.form.inherit.restrict</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                 <field name="iq_address"/>
+                 <field name="iq_phone"/>
+                 <field name="iq_discount_type" />
+                 <field name="iq_discount_amount" />
+            </xpath>
+<!--             <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/group[@name='note_group']/group[@name='sale_total']/div[1]/label[1]" position="attributes">
+                <attribute name="string">Total After Discount</attribute>
+            </xpath> -->
+
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="create_uid"/>
+             </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='product_id']" position="after">
+                <field name="iq_lot_no" options="{'no_create': True, 'no_quick_create': True, 'no_create_edit':True}"/>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='price_unit']" position="after">
+                <field name="iq_discount_type" />
+                <field name="iq_disc" />
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='price_subtotal']" position="before">
+                <field name="iq_total_beforedisc" />
+            </xpath>
+        </field>
+    </record>
+    <record id="iq_accoutmovelinedisc_form_bi_inherit" model="ir.ui.view">
+			<field name="name">movelinedisc.form.bi.inherit</field>
+			<field name="model">account.move</field>
+			<field name="inherit_id" ref="account.view_move_form" />
+			<field name="arch" type="xml">
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/field[@name='invoice_line_ids']/tree[1]/field[@name='price_unit']" position="after">
+                    <field name="iq_discount_type"  />
+                    <field name="iq_disc"  />
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/field[@name='invoice_line_ids']/tree[1]/field[@name='price_subtotal']" position="before">
+                    <field name="iq_total_beforedisc" />
+                </xpath>
+                <xpath expr = "//field[@name= 'line_ids']/tree/field[@name = 'quantity']" position = "after" >
+                    <field name = "iq_disc" invisible="1"/>
+                    <field name = "iq_discount_type" invisible="1"/>
+                </xpath>
+			</field>
+    </record>
+ </odoo>

@@ -1,0 +1,44 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* customer_multi_salespersons
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e-20201202\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-06 17:42+0000\n"
+"PO-Revision-Date: 2022-08-06 20:42+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.1\n"
+
+#. module: customer_multi_salespersons
+#: model:ir.model,name:customer_multi_salespersons.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: customer_multi_salespersons
+#: model:ir.model.fields,field_description:customer_multi_salespersons.field_res_partner__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: customer_multi_salespersons
+#: model:ir.model.fields,field_description:customer_multi_salespersons.field_res_partner__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: customer_multi_salespersons
+#: model:ir.model.fields,field_description:customer_multi_salespersons.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: customer_multi_salespersons
+#: model:ir.model.fields,field_description:customer_multi_salespersons.field_res_partner__salesperson_ids
+#: model:ir.model.fields,field_description:customer_multi_salespersons.field_res_users__salesperson_ids
+msgid "SalesPersons"
+msgstr "مندوبي المبيعات"

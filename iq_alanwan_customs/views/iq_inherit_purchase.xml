@@ -1,0 +1,65 @@
+<odoo>
+
+
+    <record id="iq_poview_form_inherit_sections" model="ir.ui.view">
+        <field name="name">iq_poview.form.inherit.restrict</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='amount_untaxed']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='amount_tax']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='amount_total']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+
+
+
+            <xpath expr="//field[@name='order_line']//field[@name='price_unit']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='order_line']//field[@name='taxes_id']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='order_line']//field[@name='price_subtotal']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//header/button[@name='action_view_picking']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+
+        </field>
+    </record>
+    <record id="inheritiq_poview_form_inherit_sections" model="ir.ui.view">
+        <field name="name">inherit.po.readonly.prices.form</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="iq_alanwan_customs.iq_poview_form_inherit_sections" />
+        <field name="groups_id" eval="[(6, 0, [ref('own_purchase_only.group_purchase_own_orders'),ref('purchase.group_purchase_manager'),ref('purchase.group_purchase_user')])]"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='amount_untaxed']" position="attributes">
+                <attribute name="invisible">False</attribute>
+            </xpath>
+            <xpath expr="//field[@name='amount_tax']" position="attributes">
+                <attribute name="invisible">False</attribute>
+            </xpath>
+            <xpath expr="//field[@name='amount_total']" position="attributes">
+                <attribute name="invisible">False</attribute>
+            </xpath>
+            <xpath expr="//field[@name='order_line']//field[@name='price_unit']" position="attributes">
+                <attribute name="invisible">False</attribute>
+            </xpath>
+            <xpath expr="//field[@name='order_line']//field[@name='taxes_id']" position="attributes">
+                <attribute name="invisible">False</attribute>
+            </xpath>
+            <xpath expr="//field[@name='order_line']//field[@name='price_subtotal']" position="attributes">
+                <attribute name="invisible">False</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

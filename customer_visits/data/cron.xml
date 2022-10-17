@@ -1,0 +1,13 @@
+<odoo>
+    <record id="ir_cron_routes_this_months" model="ir.cron">
+        <field name="name">Routes this month</field>
+        <field name="model_id" ref="model_customer_visit_wizard"/>
+        <field name="state">code</field>
+        <field name="code">model.create_tasks_next_months()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">months</field>
+        <field name="numbercall">-1</field>
+        <field name="nextcall" eval="DateTime.now().strftime('%Y-%m-29 01:00:00')" />
+        <field name="active">True</field>
+    </record>
+</odoo>

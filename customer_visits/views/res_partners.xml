@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="partner_form_visit" model="ir.ui.view">
+        <field name="name">partner.form.visit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+                <xpath expr="//notebook[last()]" position="inside">
+                    <field name="customer_rank" invisible="1"/>
+                    <field name="active" invisible="1"/>
+                    <page string="Customer Visits" attrs="{'invisible': [('customer_rank', '=', 0),('active','=',False)]}" name="customer_visits">
+                        <group>
+                            <field name="visits_ids" context="{'default_user_id': uid,'default_customer_id': active_id,'search_default_customer_id': [active_id]}">
+                                <tree>
+                                    <field name="meeting_person_name"/>
+                                    <field name="meeting_person_phone"/>
+                                    <field name="visit_date" widget="date"/>
+                                    <field name="user_id"/>
+                                    <field name="visit_type" />
+                                    <field name="show_date" widget="date"/>
+                                    <field name="next_visit" widget="date"/>
+                                    <field name="state"  widget="badge" decoration-success="state == 'done'"
+                                        decoration-warning="state == 'waiting'" decoration-info="state == 'draft' or state == 'assigned'"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                </xpath>
+        </field>
+    </record></odoo>

@@ -1,0 +1,268 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* customer_visits
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e-20201202\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-12 15:49+0000\n"
+"PO-Revision-Date: 2022-09-12 15:49+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: customer_visits
+#: model:ir.model.fields,field_description:customer_visits.field_customer_visit__street
+msgid "Address"
+msgstr ""
+
+#. module: customer_visits
+#: model:ir.model.fields.selection,name:customer_visits.selection__customer_visit__state__assigned
+#: model_terms:ir.ui.view,arch_db:customer_visits.res_partner_visits_form
+msgid "Assigned"
+msgstr "تم التكليف"
+
+#. module: customer_visits
+#: model:ir.model.fields,field_description:customer_visits.field_customer_visit__assigned_by
+msgid "Assigned by"
+msgstr "المسؤول"
+
+#. module: customer_visits
+#: model:ir.model.fields.selection,name:customer_visits.selection__customer_visit__visit_type__3
+msgid "Collection"
+msgstr "تحصيل"
+
+#. module: customer_visits
+#: model:ir.model,name:customer_visits.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: customer_visits
+#: model:ir.model.fields,field_description:customer_visits.field_customer_visit__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: customer_visits
+#: model:ir.model.fields,field_description:customer_visits.field_customer_visit__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: customer_visits
+#: model:ir.model.fields,field_description:customer_visits.field_customer_visit__visit_ids
+#: model_terms:ir.ui.view,arch_db:customer_visits.res_partner_visits_filter
+#: model_terms:ir.ui.view,arch_db:customer_visits.res_partner_visits_form
+#: model_terms:ir.ui.view,arch_db:customer_visits.res_partner_visits_tree
+msgid "Customer"
+msgstr "العميل"
+
+#. module: customer_visits
+#: model:ir.actions.act_window,name:customer_visits.res_partner_visits_action
+#: model:ir.model.fields,field_description:customer_visits.field_crm_lead__visits_ids
+#: model:ir.model.fields,field_description:customer_visits.field_res_partner__visits_ids
+#: model:ir.model.fields,field_description:customer_visits.field_res_users__visits_ids
+#: model_terms:ir.ui.view,arch_db:customer_visits.crm_lead_visit
+#: model_terms:ir.ui.view,arch_db:customer_visits.partner_form_visit
+#: model_terms:ir.ui.view,arch_db:customer_visits.res_partner_visits_form
+#: model_terms:ir.ui.view,arch_db:customer_visits.res_partner_visits_tree
+msgid "Customer Visits"
+msgstr "زيارات العميل"
+
+#. module: customer_visits
+#: model:ir.ui.menu,name:customer_visits.menu_view_res_partner_visits
+msgid "Customers Visits"
+msgstr "زيارات العملاء"
+
+#. module: customer_visits
+#: model_terms:ir.ui.view,arch_db:customer_visits.res_partner_visits_filter
+msgid "Date"
+msgstr "تاريخ الزياره"
+
+#. module: customer_visits
+#: model:ir.model.fields.selection,name:customer_visits.selection__customer_visit__visit_type__5
+msgid "Delivery"
+msgstr "توصيل"
+
+#. module: customer_visits
+#: model:ir.model.fields.selection,name:customer_visits.selection__customer_visit__visit_type__6
+msgid "Direct"
+msgstr "زيارة مباشره من المندوب"
+
+#. module: customer_visits
+#: model:ir.model.fields,field_description:customer_visits.field_crm_lead__display_name
+#: model:ir.model.fields,field_description:customer_visits.field_customer_visit__display_name
+#: model:ir.model.fields,field_description:customer_visits.field_res_partner__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: customer_visits
+#: model:ir.model.fields.selection,name:customer_visits.selection__customer_visit__state__done
+#: model_terms:ir.ui.view,arch_db:customer_visits.res_partner_visits_form
+msgid "Done"
+msgstr "مكتمل"
+
+#. module: customer_visits
+#: model:ir.model.fields.selection,name:customer_visits.selection__customer_visit__state__draft
+#: model_terms:ir.ui.view,arch_db:customer_visits.res_partner_visits_form
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: customer_visits
+#: model_terms:ir.ui.view,arch_db:customer_visits.res_partner_visits_filter
+msgid "Group By..."
+msgstr "تجميع بحسب ..."
+
+#. module: customer_visits
+#: model:ir.model.fields,field_description:customer_visits.field_crm_lead__id
+#: model:ir.model.fields,field_description:customer_visits.field_customer_visit__id
+#: model:ir.model.fields,field_description:customer_visits.field_res_partner__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: customer_visits
+#: model:ir.model.fields,field_description:customer_visits.field_customer_visit__is_assigned_next_visit
+msgid "Is assigned Next Visit Date?"
+msgstr "هل تم تحديد موعد الزيارة القادمه؟"
+
+#. module: customer_visits
+#: model:ir.model.fields,field_description:customer_visits.field_crm_lead____last_update
+#: model:ir.model.fields,field_description:customer_visits.field_customer_visit____last_update
+#: model:ir.model.fields,field_description:customer_visits.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: customer_visits
+#: model:ir.model.fields,field_description:customer_visits.field_customer_visit__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: customer_visits
+#: model:ir.model.fields,field_description:customer_visits.field_customer_visit__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: customer_visits
+#: model:ir.model,name:customer_visits.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "ترشيح/فرصة"
+
+#. module: customer_visits
+#: model:ir.model.fields.selection,name:customer_visits.selection__customer_visit__visit_type__1
+msgid "New Order"
+msgstr "بيع "
+
+#. module: customer_visits
+#: code:addons/customer_visits/models/res_partners.py:0
+#, python-format
+msgid "New Visit"
+msgstr "زيارة جديده"
+
+#. module: customer_visits
+#: model_terms:ir.ui.view,arch_db:customer_visits.res_partner_visits_filter
+msgid "Next Assigned Visit Date"
+msgstr "هل تم تحديد موعد الزيارة القادمه"
+
+#. module: customer_visits
+#: model:ir.model.fields,field_description:customer_visits.field_customer_visit__next_visit
+msgid "Next Visit Date"
+msgstr "موعد الزياره القادمه"
+
+#. module: customer_visits
+#: model:ir.model.fields,field_description:customer_visits.field_customer_visit__meeting_person_name
+msgid "Person Name"
+msgstr "الاسم"
+
+#. module: customer_visits
+#: model:ir.model.fields,field_description:customer_visits.field_customer_visit__meeting_person_phone
+msgid "Person Phone"
+msgstr "رقم التواصل"
+
+#. module: customer_visits
+#: model:ir.model.fields.selection,name:customer_visits.selection__customer_visit__visit_type__4
+msgid "Return"
+msgstr "استرجاع"
+
+#. module: customer_visits
+#: model:ir.model.fields,field_description:customer_visits.field_customer_visit__user_id
+#: model_terms:ir.ui.view,arch_db:customer_visits.res_partner_visits_filter
+msgid "Salesperson"
+msgstr "المندوب"
+
+#. module: customer_visits
+#: model_terms:ir.ui.view,arch_db:customer_visits.res_partner_visits_filter
+msgid "Search Customer Visits"
+msgstr "البحث في زيارات العملاء"
+
+#. module: customer_visits
+#: model:ir.model.fields,field_description:customer_visits.field_customer_visit__show_date
+msgid "Show Task Date"
+msgstr "تاريخ الارسال للمندوب"
+
+#. module: customer_visits
+#: model_terms:ir.ui.view,arch_db:customer_visits.res_partner_visits_filter
+msgid "State"
+msgstr "المحافظة"
+
+#. module: customer_visits
+#: model_terms:ir.ui.view,arch_db:customer_visits.res_partner_visits_filter
+msgid "User"
+msgstr "المندوب"
+
+#. module: customer_visits
+#: model:ir.model.fields.selection,name:customer_visits.selection__customer_visit__visit_type__2
+msgid "Visit"
+msgstr "زيارة"
+
+#. module: customer_visits
+#: model:ir.model.fields,field_description:customer_visits.field_customer_visit__visit_date
+msgid "Visit Date"
+msgstr "تاريخ الزياره"
+
+#. module: customer_visits
+#: model:ir.model.fields,field_description:customer_visits.field_customer_visit__latitude
+msgid "Visit Latitude"
+msgstr ""
+
+#. module: customer_visits
+#: model:ir.model.fields,field_description:customer_visits.field_customer_visit__longitude
+msgid "Visit Longitude"
+msgstr ""
+
+#. module: customer_visits
+#: model:ir.model.fields,field_description:customer_visits.field_customer_visit__visit_type
+msgid "Visit Purpose"
+msgstr "الغرض من الزياره"
+
+#. module: customer_visits
+#: model:ir.model.fields,field_description:customer_visits.field_customer_visit__reason_visit
+msgid "Visit Reason"
+msgstr ""
+
+#. module: customer_visits
+#: model:ir.model.fields,field_description:customer_visits.field_customer_visit__result_visit
+msgid "Visit Result"
+msgstr ""
+
+#. module: customer_visits
+#: model:ir.model.fields,field_description:customer_visits.field_customer_visit__state
+msgid "Visit State"
+msgstr "الحالة"
+
+#. module: customer_visits
+#: model:ir.model.fields.selection,name:customer_visits.selection__customer_visit__state__waiting
+#: model_terms:ir.ui.view,arch_db:customer_visits.res_partner_visits_form
+msgid "Waiting"
+msgstr "قيد الانتظار"
+
+#. module: customer_visits
+#: model:ir.model,name:customer_visits.model_customer_visit
+msgid "customer.visit"
+msgstr ""
+
+#. module: customer_visits
+#: model:ir.model.fields,field_description:customer_visits.field_customer_visit__map
+msgid "map"
+msgstr ""

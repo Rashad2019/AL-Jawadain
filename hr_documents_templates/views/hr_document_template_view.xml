@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record model='ir.ui.view' id='hr_document_template_form_view'>
+        <field name="name">hr.document.template.form</field>
+        <field name="model">hr.document.template</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="document_attachment_id" widget="many2many_binary" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model='ir.ui.view' id='hr_document_template_tree_view'>
+        <field name="name">hr.document.template.tree</field>
+        <field name="model">hr.document.template</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="name"/>
+                <field name="document_attachment_id" widget="many2many_binary"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_document_template_action" model="ir.actions.act_window">
+        <field name="name">HR Documents Templates</field>
+        <field name="res_model">hr.document.template</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id"></field>
+    </record>
+
+    <menuitem
+        id="menu_hr_document_template_action"
+        name="HR Documents Templates"
+        parent="hr.menu_human_resources_configuration"
+        action="hr_document_template_action"
+        sequence="5" groups="hr.group_hr_manager"
+    />
+</odoo>

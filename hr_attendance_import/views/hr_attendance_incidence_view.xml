@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- actions -->
+    <record id="action_hr_attendance_incidence" model="ir.actions.act_window">
+        <field name="name">Attendances Incidences</field>
+        <field name="res_model">hr.attendance.incidence</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- views -->
+
+    <record id="hr_attendance_incidence_view_tree" model="ir.ui.view">
+        <field name="name">hr.attendance.incidence.tree</field>
+        <field name="model">hr.attendance.incidence</field>
+        <field name="arch" type="xml">
+            <tree string="Employee attendances incidence">
+                <field name="employee_id"/>
+                <field name="barcode"/>
+                <field name="check_in"/>
+                <field name="check_out"/>
+                <field name="incidence"/>
+                <button string="Confirm"
+                        name="button_confirm_incidence"
+                        type="object"
+                        attrs="{'invisible': ['|',('employee_id', '=', False),
+                                                  ('check_in', '=', False)]}"
+                />
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_attendance_incidence_view_form" model="ir.ui.view">
+        <field name="name">hr.attendance.incidence.form</field>
+        <field name="model">hr.attendance.incidence</field>
+        <field name="arch" type="xml">
+            <form string="Employee attendances incidence">
+                <sheet>
+                    <group>
+                        <field name="employee_id"/>
+                        <field name="barcode"/>
+                        <field name="check_in"/>
+                        <field name="check_out"/>
+                        <field name="incidence"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_attendance_incidence_view_filter" model="ir.ui.view">
+        <field name="name">hr_attendance_incidence_view_filter</field>
+        <field name="model">hr.attendance.incidence</field>
+        <field name="arch" type="xml">
+            <search string="Hr Attendance Incidence Search">
+                <field name="barcode"/>
+                <field name="employee_id"/>
+
+                <separator/>
+
+                <filter
+                    name="nochecks"
+                    string="No Check In/Out"
+                    domain="['|',
+                             ('check_in', '=', False),
+                             ('check_out', '=', False)
+                            ]"
+                />
+
+                <filter
+                    name="myattendances"
+                    string="My Attendances"
+                    domain="[('employee_id.user_id.id', '=', uid)]"
+                />
+
+                <group expand="0" string="Group By">
+                    <filter
+                        name="groupby_barcode"
+                        string="Badge ID"
+                        context="{'group_by':'barcode'}"/>
+
+                    <filter
+                        name="groupby_employee"
+                        string="Employee"
+                        context="{'group_by':'employee_id'}"/>
+
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>

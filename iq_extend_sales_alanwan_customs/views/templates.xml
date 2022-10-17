@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+<!-- sales reports-->
+<template id="iq_totalssalereport_inheritnew" inherit_id="sale.report_saleorder_document">
+
+		<xpath expr="//div[hasclass('page')]//table//thead//tr//th[@name='th_taxes']" position="replace">
+		</xpath>
+			<xpath expr="//div[hasclass('page')]//table//tbody//t//tr//td[@name='td_taxes']" position="replace">
+		</xpath>
+
+	<xpath expr="//div[hasclass('page')]//div[hasclass('clearfix')]//div//div//table//tr//td[@name='td_amount_untaxed_label']//strong" position="replace">
+	   <strong>Total Before Discount</strong>
+	</xpath>
+	
+	
+	<xpath expr="//div[hasclass('page')]//div[hasclass('clearfix')]//div//div//table//tr//td[@name='td_amount_untaxed']//span" position="replace">
+                                    <span t-field="doc.iq_total_befor_disc"/>
+	</xpath>
+	
+	
+	
+	<xpath expr="//div[hasclass('page')]//div[hasclass('clearfix')]//div//div//table//tr[2]//td[@name='td_amount_total_label']//strong" position="replace">
+	   <strong>Total After Discount</strong>
+	</xpath>
+	
+	
+		
+
+		<xpath expr="//div[hasclass('page')]//table//thead//tr//th[@name='th_priceunit']" position="after">
+		<th>Discount</th>
+		</xpath>
+			<xpath expr="//div[hasclass('page')]//table//tbody//t//tr//td[@name='td_priceunit']" position="after">
+		<td><span t-field="line.iq_disc"  /></td>
+		</xpath>
+		
+		
+		
+		<xpath expr="//div[hasclass('page')]//table//thead//tr//th[@name='th_subtotal']" position="before">
+		<th>Total Before Discount</th>
+		</xpath>
+			<xpath expr="//div[hasclass('page')]//table//tbody//t//tr//td[@name='td_subtotal']" position="before">
+		<td><span t-field="line.iq_total_beforedisc"  /></td>
+		</xpath>
+		
+		
+		
+		
+	
+	
+	</template>
+	
+<!-- 	invoices -->
+	
+	<template id="iq_totalinvoicereport_inheritnew" inherit_id="account.report_invoice_document">
+	
+	<xpath expr="//div[hasclass('page')]//table//thead//tr//th[@name='th_taxes']" position="replace">
+		</xpath>
+		
+		
+			<xpath expr="//div[hasclass('page')]//table//tbody//t//tr//t//td[5]" position="replace">
+		</xpath>
+		
+		
+		
+	<xpath expr="//div[hasclass('page')]//div[hasclass('clearfix')]//div//div//table//tr//td//strong"   position="replace">
+	<strong>Total Before Discount</strong>
+	
+	</xpath>
+	
+	<xpath expr="//div[hasclass('page')]//div[hasclass('clearfix')]//div//div//table//tr//td[2]//span"   position="replace">
+	<span t-field="o.iq_total_befor_disc"/>
+	
+	</xpath>
+	
+	
+	<xpath expr="//div[hasclass('page')]//div[hasclass('clearfix')]//div//div//table//tr[2]//td//strong"   position="replace">
+	 <strong>اTotal After Discount</strong>
+	
+	</xpath>
+	
+		<xpath expr="//div[hasclass('page')]//table//thead//tr//th[@name='th_priceunit']" position="after">
+		<th>Discount</th>
+		</xpath>
+			<xpath expr="//div[hasclass('page')]//table//tbody//t//tr//t//td[3]" position="after">
+		<td><span t-field="line.iq_disc"  /></td>
+		</xpath>
+		
+		
+		<xpath expr="//div[hasclass('page')]//table//thead//tr//th[@name='th_subtotal']" position="before">
+		<th>Total Before Discount</th>
+		</xpath>
+		
+		
+		<xpath expr="//div[hasclass('page')]//table//tbody//t//tr//t//td[6]" position="before">
+		<td><span t-field="line.iq_total_beforedisc"  /></td>
+		</xpath>
+	
+	<xpath expr="//div[hasclass('page')]//table//thead//tr//th[@name='th_price_unit']" position="replace">
+	  <t t-set="display_discount" t-value="0"/>
+	</xpath>
+	
+	</template>
+	</odoo>

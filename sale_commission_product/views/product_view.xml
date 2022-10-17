@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="product_product_form_view_commission_product" model="ir.ui.view">
+            <field name="name">product.product.common.form.commission.product</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view" />
+            <field name="groups_id" eval="[(6, 0, [ref('sales_team.group_sale_manager')])]"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='general_information']" position="after">
+                    <page
+                        name="commissions"
+                        string="Targets and Commissions"
+                        attrs="{'invisible': [('commission_free','=',True)]}"
+                    >
+                        <field name="agents" attrs="{'readonly': [('commission_free', '=', True)]}" widget="one2many">
+                            <tree string="SalesPerson" editable="bottom">
+                                <field name="agent"/>
+                                <field name="commission" readonly="1"/>
+                                <field name="target" />
+                                <field name="target_achivement_compute"  widget="percentage" />
+                                <field name="target_achivement"  readonly="1" widget="percentage" />
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_product_product_agent_tree">
+            <field name="name">product.product.agent.tree</field>
+            <field name="model">product.product.agent</field>
+            <field name="arch" type="xml">
+                <tree string="Agents" editable="bottom">
+                    <field name="agent"/>
+                    <field name="commission"/>
+                </tree>
+            </field>
+        </record>
+</odoo>

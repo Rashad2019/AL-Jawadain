@@ -1,0 +1,20 @@
+<odoo>
+    <data noupdate="1">
+		<record model="ir.module.category" id="cashvan_presale_catalog">
+			<field name="name">Cash Van and Pre Sale</field>
+			<field name="sequence">200</field>
+		</record>
+		<record id="cashvan_group_id" model="res.groups">
+			<field name="name">Cash VAN</field>
+			<field name="category_id"  ref="cashvan_presale_catalog" />
+		</record>
+		<record id="presale_group_id" model="res.groups">
+			<field name="name">Pre Sale</field>
+			<field name="category_id" ref="cashvan_presale_catalog" />
+			<field name="implied_ids" eval="[(4, ref('cashvan_group_id'))]"/>
+		</record>
+        <record id="base.default_user" model="res.users">
+            <field name="groups_id" eval="[(4,ref('cashvan_presale.cashvan_group_id'))]"/>
+        </record>
+	</data>
+</odoo>

@@ -1,0 +1,53 @@
+
+<odoo>
+    <record id="partner_form" model="ir.ui.view">
+        <field name="name">partner.form - partner_approved</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                <header attrs="{'invisible': [('supplier_rank', '&gt;', 0),('active','=',False)]}">
+                    <field name="supplier_rank" invisible="1"/>
+                    <field name="state" invisible="1"/>
+                    <field name="active" invisible="1"/>
+                    <button attrs="{'invisible': ['|',('supplier_rank', '>', 0),('state', '=','approved')]}" name="button_approve" type="object" states='draft,reject' string="Approve" class="oe_highlight" groups="sales_team.group_sale_manager" data-hotkey="z"/>
+                    <button attrs="{'invisible': ['|',('supplier_rank', '>', 0),('state', '=', 'reject')]}" name="button_reject" states="draft,approved" string="Reject" type="object" class="oe_highlight" groups="sales_team.group_sale_manager" data-hotkey="o"/>
+
+                    <field name="state" widget="statusbar" statusbar_visible="draft,approved,reject"/>
+
+                </header>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="status_view_res_partner_filter" model="ir.ui.view">
+        <field name="name">Filter Status Customers</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <filter name="inactive" position="before">
+                <separator/>
+                <filter string="Approved" name="Approved" domain="[('state', '=', 'approved')]"/>
+                <filter string="Waiting Approve" name="Draft" domain="[('state', '=', 'draft')]"/>
+                <filter string="Rejected" name="Reject" domain="[('state', '=', 'reject')]"/>
+                <separator/>
+            </filter>
+        </field>
+    </record>
+    <record id="res_partner_action_customer_to_approve" model="ir.actions.act_window">
+        <field name="name">Customers to Approve</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id"></field>
+        <field name="search_view_id" ref="status_view_res_partner_filter"/>
+        <field name="domain">[('customer_rank','>',0)]</field>
+        <field name="context">{'search_default_Draft':1,'search_default_customer':1,'res_partner_search_mode': 'customer', 'default_is_company': True}</field>
+    </record>
+    <menuitem
+        id="menu_view_res_partner_to_approve"
+        name="Customers to Approve"
+        parent="sale.sale_order_menu"
+        action="res_partner_action_customer_to_approve"
+        sequence="5" groups="sales_team.group_sale_manager"
+    />
+</odoo>

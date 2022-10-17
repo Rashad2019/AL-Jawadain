@@ -1,0 +1,32 @@
+<odoo>
+  <data>
+ <record id="iq_account_balane_contact" model="ir.ui.view">
+        <field name="name">iq_balance_contact_account_inherit</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form"/>
+        <field name="arch" type="xml">
+            
+             <xpath expr="//form[1]/sheet[1]/group[1]/group[@name='group3']/label[1]" position="before">
+          <field name="iq_balance_before" />
+          </xpath>
+           <xpath expr="//form[1]/sheet[1]/group[1]/group[@name='group3']/div[@name='amount_div']" position="after">
+          <field name="iq_balance_after" />
+        </xpath>
+          
+                
+        </field>
+    </record>
+    <record id="iq_inherit_sections_entry_form" model="ir.ui.view">
+		<field name="name">iq.inherit.entry_account_section.form</field>
+		<field name="model">account.move</field>
+		<field name="inherit_id" ref="account.view_move_form" />
+		<field name="arch" type="xml">
+
+		    <xpath expr="//form/sheet/group/group/field[@name='partner_bank_id']" position="after">
+                <field name="iq_balance_before" />
+                <field name="iq_balance_after"  />
+            </xpath>
+		</field>
+    </record>
+  </data>
+</odoo>

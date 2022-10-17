@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="custom_report_invoice_document">
+        <t t-call="custom_invoice_report.small_custom_external_layout">
+            <t t-set="o" t-value="o.with_context(lang=lang)"/>
+            <div class="page" style="page-break-inside: avoid;text-align: right;background-color: white;font-size: 16px;">
+                <t t-if="not o and doc">
+                    <t t-set="o" t-value="doc"/>
+                </t>
+                <t t-if="not doc and o">
+                    <t t-set="doc" t-value="o"/>
+                </t>
+                <t t-if="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-if="not o or not 'company_id' in o">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+                <div style="display:block;direction:rtl;page-break-inside: avoid !important;" >
+                            <t t-set="date_order" t-value="doc.invoice_date"/>
+                            <t t-set="number" t-value="doc.name"/>
+                            <t t-call="custom_invoice_report.head_custom_report_invoice_document"/>
+
+                            <!-- Orderlines -->
+                            <div class="orderlines" style="page-break-before:avoid !important;page-break-inside: avoid;">
+                                <div style="page-break-inside: avoid;font-weight: bolder;text-align:right; padding-top: 1px;padding-bottom:1px;">
+                                    <div class="row" style="font-size:20px;border-top: 1px dashed black;">
+                                        <div class="col-auto mw-170 mb-1">
+                                        الفاتورة :
+                                        <span style="font-size:17px;" t-esc="number"/>
+                                        </div>
+                                        <t t-if="doc.user_id">
+                                        <div class="col-auto mw-100 mb-1">
+                                        البائع :
+                                         <span t-esc="doc.user_id.name"/>
+                                         <t t-if="doc.user_id.employee_id">
+                                           <t t-if="doc.user_id.employee_id.work_phone">
+                                              -
+                                           <span t-esc="doc.user_id.employee_id.work_phone"/>
+                                           </t>
+                                         </t>   
+                                        </div>
+                                        </t>
+                                    </div>
+                                    <div class="row" style="font-size:20px;border-bottom: 1px dashed black;">
+                                        <t t-if="doc.partner_id">
+                                            <div class="col-auto mw-100 mb-1">
+                                            العميل :
+                                            <t t-esc="doc.partner_id.name"/>
+                                            </div>
+                                        </t>
+                                        <div class="col-auto mw-100 mb-1">
+                                        التاريخ :
+                                         <span t-esc="date_order"/>
+                                        </div>
+                                    </div>
+                                <table style="font-size:17px;page-break-inside: avoid;width: 100%;font-weight: bolder;">
+                                    <colgroup>
+                                        <col width="38%"/>
+                                        <col width="15%"/>
+                                        <col width="28%"/>
+                                        <col width="20%"/>
+
+                                    </colgroup>
+                                    <tr style="font-size:20px;font-weight: bolder;border-bottom: 1px solid black;">
+                                    <th style="text-align:right;">المنتج</th>
+                                    <th style="text-align:right;">الكمية</th>
+                                    <th style="text-align: center;">سعر الوحده</th>
+                                    <th>الاجمالي</th>
+                                    </tr>
+                                    <t t-set="discounttotal" t-value="0"/>
+                                    <t t-set="linepriceafterdesc" t-value="0"/>
+                                    <tr t-foreach="doc.invoice_line_ids" t-as="line" style="font-size:16px !important; font-weight: bolder;border-bottom: 1px solid #ddd;">
+                                        <t t-set="linetaxamount" t-value="0"/>
+                                        <t t-set="discounttotal" t-value="discounttotal + (line.iq_total_beforedisc - line.price_total)"/>
+                                        <td style="font-size:17px;padding-right: 2px;border:1px solid #ddd;">
+                                            <div style="font-size:17px  !important;text-align: right;padding-top: 10px;padding-bottom: 10px;">
+                                               <p style="font-weight: bolder;font-size:21px !important;text-align: right;" t-esc="line.name"/>
+                                            </div>
+                                        </td>
+                                        <td style="font-weight: bolder;font-size:21px  !important;border:1px solid #ddd;text-align: center;"><p class="text-nowrap" t-esc="line.quantity"/></td>
+                                        <td style="font-weight: bolder;font-size:21px  !important;padding-right: 2px;border:1px solid #ddd;text-align: right;">
+                                            <div style="padding-top: 10px;padding-bottom: 10px;">
+                                                <span t-esc="line.price_unit"/>
+                                                <t t-if="line.iq_disc">
+                                                    <h5 style="font-weight: bolder;font-size:17px;text-align: right;margin-top: 0%;margin-bottom: 0%;font-size: 85%;color: #848484;">
+                                                     الخصم <strong t-options="{&quot;widget&quot;: &quot;float&quot;, &quot;precision&quot;: 2}" t-esc="((line.iq_total_beforedisc - line.price_total) / line.quantity)"/>
+                                                    </h5>
+                                                </t>
+                                            </div>
+                                          </td>
+                                        <td style="font-weight: bolder;font-size:21px !important;padding-right: 2px;border:1px solid #ddd;text-align: right;"><p class="text-nowrap" t-esc="line.price_total"/></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            </div>
+
+
+                            <!-- Subtotal -->
+                            <t t-set="taxincluded" t-value="0"/>
+                            <t t-if="taxincluded == 0">
+                                <br/>
+                                <div style="font-size:20px;page-break-inside: avoid;padding-bottom: 4px;text-align: left; font-weight: bolder;border-top: 2px solid; padding-top: 2%;">
+                                    <span style="text-align: right;float: inline-start;float: right;">
+                                    الاجمالي الفرعي :
+                                    </span>
+                                    <span class="text-nowrap" t-esc="doc.iq_total_befor_disc" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                                </div>
+                            </t>
+                            <t t-if="discounttotal &gt; 0">
+                                <br/>
+                                <div style="font-size:20px;page-break-inside: avoid;padding-bottom: 4px;text-align: left; font-weight: bolder;border-top: 2px solid; padding-top: 2%;">
+                                    <span style="text-align: right;float: inline-start;float: right;">
+                                    اجمالي الخصم :
+                                    </span>
+                                    <span class="text-nowrap" t-esc="discounttotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                                </div>
+                            </t>
+                            <!-- Total -->
+
+                            <div style="font-size:20px;page-break-inside: avoid;font-weight: bolder;text-align: left; border-top: 2px solid;padding-top: 2%;">
+                                  <span style="text-align: right;float: inline-start;float: right;">
+                                  الاجمالي :
+                                  </span>
+                                <span class="text-nowrap" style="" t-esc="doc.amount_total" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                            </div>
+
+
+                            <t t-if="doc.amount_residual &gt; 0 and doc.payment_state == 'partial'">
+                                <br/>
+                                <div style="font-size:20px;page-break-inside: avoid;padding-bottom: 4px;text-align: left; font-weight: bolder;border-top: 2px solid; padding-top: 2%;">
+                                    <span style="text-align: right;float: inline-start;float: right;">
+                                     المبلغ المدفوع :
+                                    </span>
+                                    <span class="text-nowrap" t-esc="doc.amount_total - doc.amount_residual" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                                </div>
+                            </t>
+                            <t t-if="doc.amount_residual == 0 and doc.payment_state == 'paid' ">
+                                <br/>
+                                <div style="font-size:20px;page-break-inside: avoid;padding-bottom: 4px;text-align: left; font-weight: bolder;border-top: 2px solid; padding-top: 2%;">
+                                    <span style="text-align: right;float: inline-start;float: right;">
+                                     المبلغ المدفوع :
+                                    </span>
+                                    <span class="text-nowrap" t-esc="doc.amount_total - doc.amount_residual" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                                </div>
+                            </t>
+                            <t t-if="doc.amount_residual &gt; 0 and doc.payment_state == 'partial'">
+                                <br/>
+                                <div style="font-size:20px;page-break-inside: avoid;padding-bottom: 4px;text-align: left; font-weight: bolder;border-top: 2px solid; padding-top: 2%;">
+                                    <span style="text-align: right;float: inline-start;float: right;">
+                                    المبلغ المتبقي :
+                                    </span>
+                                    <span class="text-nowrap" t-esc="doc.amount_residual" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                                </div>
+                            </t>
+                        </div>
+
+            </div>
+        </t>
+    </template>
+
+    <template id="head_custom_report_invoice_document">
+        <t t-if="doc.company_id.logo">
+            <t t-set="have_no_logo" t-value="false"/>
+            <img style="width: 70%;display: block;margin: auto;" t-att-src="image_data_uri(doc.company_id.logo)" alt="Logo"/>
+            <br/>
+        </t>
+        <t t-else="">
+            <t t-set="have_no_logo" t-value="true"/>
+        </t>
+        <div style="page-break-before:avoid !important;page-break-after:avoid !important; text-align:center;font-size:20px">
+            <t t-if="have_no_logo">
+                <h2 class="pos-receipt-center-align">
+                    <t t-esc="doc.company_id.name"/>
+                </h2>
+            </t>
+            <t t-if="doc.company_id.street">
+                <div style="font-size:20px">العنوان:<t t-esc="doc.company_id.street"/></div>
+            </t>
+            <t t-if="doc.company_id.phone">
+                <div style="font-size:20px">الهاتف:<t t-esc="doc.company_id.phone"/></div>
+            </t>
+        </div>
+    </template>
+
+    <template id="small_custom_external_layout">
+            <t t-if="not o and doc">
+                <t t-set="o" t-value="doc"/>
+            </t>
+            <t t-if="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-if="not o or not 'company_id' in o">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+            <div style="margin-top:0px;" class="article din" t-att-data-oe-model="o and o._name"
+                 t-att-data-oe-id="o and o.id">
+                <t t-raw="0"/>
+            </div>
+<!--            <div class="footer o_background_footer din">-->
+<!--                <div class="text-right page_number">-->
+<!--                    <div class="text-muted">-->
+<!--                        Page:-->
+<!--                        <span class="page"/>-->
+<!--                        of-->
+<!--                        <span class="topage"/>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+        </template>
+
+    <template id="report_small_invoice_custom">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-set="lang"
+                   t-value="o.invoice_user_id.sudo().lang if o.move_type in ('in_invoice', 'in_refund') else o.partner_id.lang"/>
+                <t t-call="custom_invoice_report.custom_report_invoice_document" t-lang="lang"/>
+            </t>
+        </t>
+    </template>
+
+</odoo>

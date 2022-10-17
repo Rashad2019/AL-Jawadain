@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+	
+	<template id="webclient_bootstrap" name="Web Client" inherit_id="web.webclient_bootstrap">
+        <xpath expr="//t[@t-set='body_classname']" position="after">
+
+            <t t-if="request.env.user.company_id.bg_image " >
+                <t t-set="body_bg_image" t-value="'o_home_menu_background_custom'"/>
+                <t t-set="body_classname" t-value="'%s %s' % (body_classname, body_bg_image)"/>
+            </t>
+        </xpath>
+    </template>
+	
+</odoo>

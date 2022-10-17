@@ -1,0 +1,29 @@
+<odoo>
+    <data>
+        <record id="iq_totalsinheritsalepickingview_form_inherit_sections" model="ir.ui.view">
+            <field name="name">iq_totalsinheritsalespickingview.form.inherit.restrict</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/group[@name='note_group']/group[@name='sale_total']/field[@name='tax_totals_json']" position="replace">
+                    <field name="iq_total_befor_disc" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                    <field name="iq_total_disc" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                </xpath>
+<!--                 <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/group[@name='note_group']/group[@name='sale_total']/field[@name='amount_tax']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath> -->
+            </field>
+            </record>
+        <record id="iq_totalsinheritinoicesickingview_form_inherit_sections" model="ir.ui.view">
+            <field name="name">iq_totalsinheritinvoicesingview.form.inherit.restrict</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='tax_totals_json']" position="replace">
+                    <field name="iq_total_befor_disc" />
+                    <field name="iq_total_disc" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

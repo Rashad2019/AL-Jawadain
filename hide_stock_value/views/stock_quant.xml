@@ -1,0 +1,26 @@
+<odoo>
+	<data>
+		<record id="stock_quant_tree_hide_value" model="ir.ui.view">
+			<field name="name">stock.quant.hide.value.tree.inherit</field>
+			<field name="model">stock.quant</field>
+			<field name="inherit_id" ref="stock.view_stock_quant_tree" />
+			<field name="groups_id" eval="[(6, 0, [ref('stock.group_stock_user'),ref('stock.group_stock_manager') ])]"/>
+			<field name="arch" type="xml">
+                <xpath expr="//field[@name='value']" position="attributes">
+                     <attribute name="invisible">1</attribute>
+                </xpath>
+			</field>
+		</record>
+		<record id="stock_quant_tree_editable_hide_value" model="ir.ui.view">
+			<field name="name">stock.quant.hide.value.tree.editable.inherit</field>
+			<field name="model">stock.quant</field>
+			<field name="inherit_id" ref="stock.view_stock_quant_tree_editable" />
+			<field name="groups_id" eval="[(6, 0, [ref('stock.group_stock_user'),ref('stock.group_stock_manager') ])]"/>
+			<field name="arch" type="xml">
+                <xpath expr="//field[@name='value']" position="attributes">
+                     <attribute name="invisible">1</attribute>
+                </xpath>
+			</field>
+		</record>
+	</data>
+</odoo>

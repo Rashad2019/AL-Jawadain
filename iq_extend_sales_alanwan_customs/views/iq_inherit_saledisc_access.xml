@@ -1,0 +1,32 @@
+<odoo>
+    <record model="ir.module.category" id="f_discaccsssales_module_category">
+        <field name="name">Has Disc Access On Sales ? </field>
+        <field name="sequence">290</field>
+    </record>
+    <record id="f_salediscaccess_group_id" model="res.groups">
+        <field name="name">No</field>
+        <field name="category_id" ref="iq_extend_sales_alanwan_customs.f_discaccsssales_module_category" />
+    </record>
+    <record id="iq_discaccesssalepersoninheritsalepickingview_form_inherit_sections" model="ir.ui.view">
+        <field name="name">iq_discaccesssalepersoninheritsalespickingview.form.inherit.restrict</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="groups_id" eval="[(6, 0, [ref('iq_extend_sales_alanwan_customs.f_salediscaccess_group_id')])]"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='iq_discount_type']" position="attributes">
+                <attribute name="readonly">True</attribute>
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='iq_discount_amount']" position="attributes">
+                <attribute name="readonly">True</attribute>
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='iq_disc']" position="attributes">
+                <attribute name="readonly">True</attribute>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='iq_discount_type']" position="attributes">
+                <attribute name="readonly">True</attribute>
+            </xpath>
+        </field>
+        </record>
+</odoo>

@@ -1,0 +1,40 @@
+
+<odoo>
+    <record id="customer_ladger_list_view_custom" model="ir.ui.view">
+        <field name="name">Customer Ledger</field>
+        <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <tree string="Customer Ladger" sample="1" create="false">
+                    <field name="display_name" string="Name"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="phone" class="o_force_ltr" optional="show"/>
+                    <field name="email" optional="show"/>
+                    <field name="user_id" optional="show" widget="many2one_avatar_user" domain="[('share', '=', False)]"/>
+                    <field name="total_paid" string='Total Paid' widget="monetary" options="{'currency_field': 'currency_id'}" optional="show" />
+                    <field name="total_paid_rate" string='Total Paid Rate %' widget="percentage"  optional="show"/>
+                    <field name="total_invoiced" string='Total Invoiced' widget="monetary" options="{'currency_field': 'currency_id'}" optional="show" />
+                    <field name="city" optional="hide"/>
+                    <field name="state_id" optional="hide" readonly="1"/>
+                    <field name="country_id" optional="hide" readonly="1"/>
+                </tree>
+            </field>
+    </record>
+
+
+    <record id="res_partner_action_customer_ladger" model="ir.actions.act_window">
+        <field name="name">Customer Ledger</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="customer_amount_due_paid.customer_ladger_list_view_custom" />
+        <field name="search_view_id" ref="base.view_res_partner_filter"/>
+        <field name="domain">[('customer_rank','>',0)]</field>
+        <field name="context">{'search_default_customer':1,'res_partner_search_mode': 'customer', 'default_is_company': True}</field>
+    </record>
+    <menuitem
+        id="menu_view_customer_ladger"
+        name="Customer Ledger"
+        parent="account_reports.account_reports_partners_reports_menu"
+        action="res_partner_action_customer_ladger"
+        sequence="5" groups="account.group_account_readonly,account.group_account_invoice"
+    />
+</odoo>

@@ -1,0 +1,13 @@
+<odoo>
+    <record id="res_partner_view_form_partner_type" model="ir.ui.view">
+        <field name="name">res.partner.view.form.partner.type</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='function']" position="before">
+                <field name="customer_rank" invisible="1"/>
+                <field name="partner_type" attrs="{'invisible': [('customer_rank', '=', '0')]}" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

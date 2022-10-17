@@ -1,0 +1,27 @@
+<odoo>
+    <data>
+        <record id="disable_neqative_sales_order_inherited_form_view" model="ir.ui.view">
+            <field name="name">disable.neqative.sales.orders.form</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@data-key='sale_management']" position="inside">
+                    <h2>Disable Out of Stock Sales Orders</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box" title="(Disable Negative Sales Orders).">
+                            <div class="o_setting_left_pane">
+                                <field name="disable_negative_sales_orders"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="disable_negative_sales_orders"/>
+                                <div class="text-muted">
+                                    Disable Out of Stock Sales Orders
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

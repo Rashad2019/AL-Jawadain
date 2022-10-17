@@ -1,0 +1,18 @@
+<odoo>
+  <data>
+
+
+ 
+  <record model="ir.module.category" id="hide_purchase_on_product_module_category">
+		<field name="name">Hide Purchase On Products</field>
+		<field name="sequence">300</field>
+	
+	</record>      
+		<record id="hide_purchase_on_product_group_id" model="res.groups">
+			<field name="name">Yes</field>
+			<field name="category_id"
+				ref="hide_purchase_from_product.hide_purchase_on_product_module_category" />
+		</record>
+		
+  </data>
+</odoo>

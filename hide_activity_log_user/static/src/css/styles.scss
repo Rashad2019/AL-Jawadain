@@ -1,0 +1,15 @@
+
+
+.mk_chatter_position_hide .o_FormRenderer_chatterContainer {
+    display: none !important;
+}
+
+.mk_chatter_position_hide_on_product .o_Chatter [data-thread-local-id^="mail.thread_product.template"] {
+    display: none !important;
+
+}
+.mk_chatter_position_hide_on_product .o_Chatter [data-thread-local-id^="mail.thread_product.product"] {
+    display: none !important;
+
+}
+

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="name">partner zone</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="before" >
+                <field widget="many2many_tags" name="zone_id" />
+            </xpath>
+        </field>
+    </record>
+    <record id="view_partner_tree" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="name">partner zone tree</field>
+        <field name="inherit_id" ref="base.view_partner_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='city']" position="before" >
+                <field widget="many2many_tags" name="zone_id" />
+            </xpath>
+        </field>
+    </record>
+    <record id="view_res_partner_filter_zone" model="ir.ui.view">
+        <field name="name">Filter Customers Zone</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter" />
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after">
+                <separator />
+                <field name="zone_id" />
+            </field>
+            <filter name="group_country" position="after">
+                <filter
+                    name="zone_group"
+                    string="Zone"
+                    context="{'group_by': 'zone_id'}"
+                />
+            </filter>
+        </field>
+    </record>
+</odoo>

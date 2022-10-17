@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="customer_visit_wizard_form" model="ir.ui.view">
+            <field name="name">customer_visit.wizard.form</field>
+            <field name="model">customer.visit.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Routes Profile">
+
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button attrs="{'invisible': [('visits_count', '>', 0)]}" name="create_tasks" type="object" class="oe_stat_button" icon="fa-map icon">
+                                <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_text">Create Routes</span>
+                                </div>
+                            </button>
+                            <button attrs="{'invisible': [('visits_count', '=', 0)]}" name="create_tasks" type="object" class="oe_stat_button" icon="fa-map icon">
+                                <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_text">Update Routes</span>
+                                </div>
+                            </button>
+                            <button attrs="{'invisible': [('visits_count','=',0)]}"   name="show_tasks" type="object" class="oe_stat_button" icon="fa-map-marker icon">
+
+                                <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_value">
+                                        <field name="visits_count" widget="statinfo" nolabel="1"/>
+                                    </span>
+                                    <span class="o_stat_text">Routes</span>
+                                </div>
+                            </button>
+
+                        </div>
+                        <group>
+                            <group>
+                                <field name="valid_user_ids" attrs="{'readonly': [('visits_count', '>', 0)]}" invisible="1" />
+                                <field name="valid_customrs_ids" attrs="{'readonly': [('visits_count', '>', 0)]}" invisible="1" />
+                                <field name="zone_id" attrs="{'readonly': [('visits_count', '>', 0)]}" options="{'no_create_edit': True,'no_create': True}" required="1"  />
+                                <field name="user_id" attrs="{'readonly': [('visits_count', '>', 0)]}" options="{'no_create_edit': True,'no_create': True}" required="1" domain="[('id', 'in', valid_user_ids)]"   />
+
+                            </group>
+                            <group>
+<!--                                <field name="visit_type" widget="selection"  required="1"  />-->
+<!--                                <field name="visit_date" required="1"  widget="date" />-->
+<!--                                <field name="show_date" required="1"  widget="date" />-->
+                                <field name="assigned_by" readonly="1" />
+                            </group>
+                        </group>
+                        <group >
+                            <field
+                                name="visit_line_ids"
+                                widget="one2many"
+                                colspan="4"
+                                nolabel="1"
+                                options="{'no_open': True}"
+                                mode="tree"
+                                context="{'default_send_to_salesperson':False}"
+                                attrs="{'invisible': [('valid_customrs_ids', '=', False)]}"
+                            >
+                                <tree string="Customers" decoration-danger="send_to_salesperson" sample='1'   editable="bottom">
+                                    <field name="valid_customrs_ids"  invisible="1"/>
+                                    <field name="customrs_ids"  domain="[('id', 'in', valid_customrs_ids)]" options="{'no_create_edit': True,'no_create': True}" required="1"/>
+                                    <field name="send_to_salesperson" widget="boolean_toggle" />
+                                    <field name="every_week" widget="boolean_toggle" />
+                                    <field name="visit_date" attrs="{'required': [('send_to_salesperson','=',True)]}"  widget="date" />
+<!--                                    <field name="visit_type" options="{'no_create_edit': True,'no_create': True}" required="1" />-->
+                                </tree>
+                            </field>
+                        </group>
+                        <group>
+<!--                            <field nolabel="1"  name="map" widget="openstreetmap_visits"/>-->
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_multi_customer_visits_wizard_tree" model="ir.ui.view">
+            <field name="name">customer.visit.wizard.tree</field>
+            <field name="model">customer.visit.wizard</field>
+            <field name="arch" type="xml">
+                <tree string="Routes Profiles">
+                    <field  name="user_id" />
+                    <field name="zone_id" />
+                    <field name="assigned_by"/>
+               </tree>
+            </field>
+        </record>
+        <record id="view_multi_customer_visits_wizard_tree_filter" model="ir.ui.view">
+            <field name="name">Filter Routes Profiles</field>
+            <field name="model">customer.visit.wizard</field>
+            <field name="arch" type="xml">
+                <search string="Search Routes Profiles">
+                    <field string="Salesperson" name="user_id" />
+                    <field string="Date" name="visit_date" />
+                    <separator/>
+                    <group string="Group By..." expand="0" name="groupby">
+                        <filter string="Sales Person" name="user_id" context="{'group_by':'user_id'}"/>
+                        <filter string="Zone" name="zone_id" context="{'group_by':'zone_id'}"/>
+                        <filter string="Assigned by" name="state" context="{'group_by': 'assigned_by'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="res_profile_multi_customer_visits_action" model="ir.actions.act_window">
+            <field name="name">Routes Profiles</field>
+            <field name="res_model">customer.visit.wizard</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'default_user_id': uid}</field>
+            <field name="groups_id" eval="[(4, ref('sales_team.group_sale_manager'))]"/>
+            <field name="search_view_id" ref="customer_visits.view_multi_customer_visits_wizard_tree_filter" />
+        </record>
+        <record id="res_profile_lines_customer_visits_action" model="ir.actions.act_window">
+            <field name="name">Routes Profiles lines</field>
+            <field name="res_model">customer.visit.wizard.line</field>
+            <field name="view_mode">tree</field>
+            <field name="context">{'default_user_id': uid}</field>
+            <field name="groups_id" eval="[(4, ref('sales_team.group_sale_manager'))]"/>
+        </record>
+        <menuitem
+            id="menu_tree_view_res_customers_visits"
+            name="Routes Profiles"
+            parent="crm.crm_menu_sales"
+            action="res_profile_multi_customer_visits_action"
+            sequence="6" groups="sales_team.group_sale_manager"
+        />
+<!--        <menuitem-->
+<!--            id="menu_view_res_customers_visits"-->
+<!--            name="Create Multi Routes"-->
+<!--            parent="crm.crm_menu_sales"-->
+<!--            action="res_multi_customer_visits_action"-->
+<!--            sequence="7" groups="sales_team.group_sale_manager"-->
+<!--        />-->
+</odoo>

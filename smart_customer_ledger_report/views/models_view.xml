@@ -1,0 +1,60 @@
+
+<odoo>
+    <record id="customer_ladger_list_view_custom" model="ir.ui.view">
+        <field name="name">Customer Ledger</field>
+        <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <tree string="Customer Ledger" sample="1" create="false">
+                    <field name="display_name" string="Name"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="street" class="o_address_street" optional="show"/>
+                    <field name="phone" class="o_force_ltr" optional="show"/>
+                    <field name="user_id" optional="hide" widget="many2one_avatar_user"/>
+                    <field name="total_invoiced" string='Balance' widget="monetary" options="{'currency_field': 'currency_id'}" optional="show" />
+                    <field name="total_last_paid_rate_chr" class="text-center" string='Last Paid Rate %'  optional="show"/>
+                    <field name="date_last_invoiced_chr" class="text-center" string='Last Sales Ago'   optional="show" />
+                    <field name="date_last_paid_chr" class="text-center" string='Last Payment Ago'  optional="show" />
+<!--                    <field name="date_last_invoiced" string='Last Sales Ago' widget="remaining_days"  optional="show" />-->
+<!--                    <field name="date_last_paid" string='Last Payment Ago' widget="remaining_days"  optional="show" />-->
+                </tree>
+            </field>
+    </record>
+    <record id="view_res_customer_ledger" model="ir.ui.view">
+            <field name="name">res.customer.ledger.search</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <search string="Search Customer">
+                    <field name="user_id" string="SalesPerson"/>
+                    <field name="name"
+                        filter_domain="['|', '|', ('display_name', 'ilike', self), ('ref', '=', self), ('email', 'ilike', self)]"/>
+                    <field name="street" filter_domain="[('mobile', 'ilike', self)]"/>
+                    <field name="phone" filter_domain="['|', ('phone', 'ilike', self), ('mobile', 'ilike', self)]"/>
+                    <separator/>
+<!--                    <filter string="Individuals" name="type_person" domain="[('is_company', '=', False)]"/>-->
+<!--                    <filter string="Companies" name="type_company" domain="[('is_company', '=', True)]"/>-->
+<!--                    <separator/>-->
+<!--                    <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>-->
+<!--                    <separator/>-->
+<!--                    <group expand="0" name="group_by" string="Group By">-->
+<!--                        <filter name="salesperson" string="Salesperson" domain="[]" context="{'group_by' : 'user_id'}" />-->
+<!--                        <filter name="group_company" string="Company" context="{'group_by': 'parent_id'}"/>-->
+<!--                        <filter name="group_country" string="Country" context="{'group_by': 'country_id'}"/>-->
+<!--                    </group>-->
+                </search>
+            </field>
+        </record>
+
+<!--    <record id="salesperson_view_res_partner_filter" model="ir.ui.view">-->
+<!--        <field name="name">Filter SalesPerson Customers</field>-->
+<!--        <field name="model">res.partner</field>-->
+<!--        <field name="inherit_id" ref="base.view_res_partner_filter"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//field[@name='name']" position="after">-->
+<!--                <field name="user_id" string="SalesPerson" filter_domain="[('user_id', '=', self)]"/>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+
+
+
+</odoo>

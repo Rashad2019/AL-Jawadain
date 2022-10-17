@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="action_commission_report" model="ir.actions.report">
+		<field name="name">Commissions Report</field>
+		<field name="model">commission.report.wizard</field>
+		<field name="report_type">qweb-pdf</field>
+		<field name="report_name">smart_commission_report.commission_report</field>
+		<field name="report_file">smart_commission_report.commission_report</field>
+		<field name="binding_type">report</field>
+		<field name="paperformat_id" ref="smart_commission_report.commission_format"/>
+	</record>
+	<record id="view_commission_wizard" model="ir.ui.view">
+		<field name="name">commission.report.wizard</field>
+		<field name="model">commission.report.wizard</field>
+		<field name="arch" type="xml">
+			<form string="Target Commission">
+
+				<group>
+					<group>
+						<field name="user_ids"  widget="many2many_tags" domain="[('agent','=',True),('salesman_as_agent','=',True)]"   String="SalePersons" />
+						<field name="product_id" widget="many2many_tags" domain="[('commission_free','=',False),('sale_ok','=',True)]"   String="Products" />
+						<field name="company_id" invisible="1"/>
+					</group>
+					<group>
+						<field name="start_dt"/>
+						<field name="end_dt"/>
+					</group>
+				</group>
+				<footer>
+					<button name="print_excel_report" string="Print XLS" type="object" class="btn-primary"/>
+					<button name="print_pdf_report" string="Print PDF" type="object" class="btn-primary"/>
+					<button string="Cancel" class="btn-default" special="cancel" />
+				</footer>
+			</form>
+		</field>
+	</record>
+	<record id="action_report_commission" model="ir.actions.act_window">
+		<field name="name">Commissions Report</field>
+		<field name="res_model">commission.report.wizard</field>
+		<field name="view_mode">form</field>
+		<field name="target">new</field>
+	</record>
+	<menuitem
+			id="menu_visit_report"
+			name="Target Commission Report"
+			action="action_report_commission"
+			groups="sales_team.group_sale_manager"
+			parent="sale.menu_sale_report"
+			sequence="6"
+	/>
+	<record id="view_commission_xls" model="ir.ui.view">
+		<field name="name">commission.excel.report.xls</field>
+		<field name="model">commission.excel.report</field>
+		<field name="arch" type="xml">
+			<form string="Target Commission Report">
+				<group>
+					<group>
+						<field name="file_name" />
+						<field name="excel_file" filename="file_name"/>
+					</group>
+				</group>
+				<footer>
+					<button string="Cancel" class="btn-default" special="cancel" />
+				</footer>
+			</form>
+		</field>
+	</record>
+</odoo>
+

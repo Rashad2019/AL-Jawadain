@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sale_order_form_view_sell_by_phone" model="ir.ui.view">
+        <field name="name">sale_order_form_view_sell_by_phone</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                 <field name="sale_method" widget="selection" attrs="{'invisible': [('sale_method', '=','by_web')]}" readonly="1" />
+            </xpath>
+        </field>
+    </record>
+    <record id="sale_order_tree_view_sell_by_phone" model="ir.ui.view">
+        <field name="name">sale_order_tree_view_sell_by_phone</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state']" position="before">
+                 <field optional="show" name="sale_method" string="Sale Method" widget="badge"  decoration-success="sale_method == 'by_phone'" decoration-info="sale_method == 'by_route'" />
+            </xpath>
+        </field>
+    </record>
+    <record id="sale_order_quotation_tree_view_sell_by_phone" model="ir.ui.view">
+        <field name="name">sale_order_quotation_tree_view_sell_by_phone</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state']" position="before">
+                 <field optional="show" name="sale_method" string="Sale Method" widget="badge"  decoration-success="sale_method == 'by_phone'" decoration-info="sale_method == 'by_route'" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

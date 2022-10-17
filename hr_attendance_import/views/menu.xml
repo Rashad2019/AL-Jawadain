@@ -1,0 +1,24 @@
+<odoo>
+    <!-- Menus -->
+
+
+    <menuitem id="menu_hr_attendance_import_manage"
+              name="Imports"
+              parent="hr_attendance.menu_hr_attendance_root"
+              groups="hr_attendance.group_hr_attendance_manager"
+              sequence="50" />
+
+    <menuitem id="menu_hr_attendance_import_incidence"
+              name="Attendances Incidences"
+              parent="menu_hr_attendance_import_manage"
+              action="action_hr_attendance_incidence"
+              groups="hr_attendance.group_hr_attendance_manager"
+              sequence="10"/>
+
+    <menuitem id="menu_hr_attendance_import_import"
+              name="New Import"
+              parent="menu_hr_attendance_import_manage"
+              action="action_wizard_hr_attendance_import"
+              groups="hr_attendance.group_hr_attendance_manager"
+              sequence="20"/>
+</odoo>

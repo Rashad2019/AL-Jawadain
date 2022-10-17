@@ -1,0 +1,31 @@
+<odoo>
+
+  <record model="ir.module.category" id="f_scrapprods_qtys_module_category">
+		<field name="name">Scrap Admin Access</field>
+		<field name="sequence">290</field>
+	
+	</record>      
+		<record id="f_scrapadminprodqty_group_id" model="res.groups">
+			<field name="name">Admin Group</field>
+			<field name="category_id"
+				ref="iq_alanwan_customs.f_scrapprods_qtys_module_category" />
+		</record>
+		
+		
+
+
+
+
+
+ <record id="iq_scrap_form_inherit_sections" model="ir.ui.view">
+        <field name="name">iq_scrap.form.inherit.restrict</field>
+        <field name="model">stock.scrap</field>
+        <field name="inherit_id" ref="stock.stock_scrap_form_view"/>
+        <field name="arch" type="xml">
+             <xpath expr="//form//sheet//group//group[2]//field[@name='company_id']" position="after">
+               <field name="iq_note"/>
+               <field name="iq_user"/>
+             </xpath>
+             </field>
+             </record>
+             </odoo>

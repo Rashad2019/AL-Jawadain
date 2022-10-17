@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_add_currency_add_currency,add_currency.add_currency,model_wosolat_wosolat,base.group_user,1,1,1,1
+access_add_currency_add_currency1,add_currency.add_currency1,model_solaf_solaf,base.group_user,1,1,1,1

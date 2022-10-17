@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_change_days_on_payslip_change_days_on_payslip,change_days_on_payslip.change_days_on_payslip,model_change_days_on_payslip_change_days_on_payslip,base.group_user,1,1,1,1

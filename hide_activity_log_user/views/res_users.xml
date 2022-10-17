@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_users_hide_chatter" model="ir.ui.view">
+        <field name="name">res.users.hide.chatter</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form" />
+        <field name="arch" type="xml">
+             <xpath expr="//field[@name='action_id']" position="before">
+                 <field  name="hide_chatter" string="Hide Activity log"/>
+                 <field  name="hide_chatter_on_products" string="Hide Activity log on Products"/>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

@@ -1,0 +1,423 @@
+<odoo>
+    <record id="fcm_registered_devices_view_form" model="ir.ui.view">
+        <field name="name">fcm_registered_devices.form</field>
+        <field name="model">fcm.registered.devices</field>
+        <field name="arch" type="xml">
+            <form string="Registered Devices">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_toggle" options='{"terminology": "archive"}'/>
+                        </button>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="user_id"/>
+                            <field name="device_id"/>
+                        </group>
+                        <group>
+                            <field name="write_date"/>
+                        </group>
+                        <field name="token"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="fcm_registered_devices_view_tree" model="ir.ui.view">
+        <field name="name">fcm_registered_devices.tree</field>
+        <field name="model">fcm.registered.devices</field>
+        <field name="arch" type="xml">
+            <tree string="Registered Devices">
+                <field name="user_id"/>
+                <field name="device_id"/>
+                <field name="write_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="fcm_registered_devices_action" model="ir.actions.act_window">
+        <field name="name">FCM Registered Devices</field>
+        <field name="res_model">fcm.registered.devices</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="fcm_registered_devices_view_tree"/>
+    </record>
+
+        <record id="fcm_registered_topics_view_tree" model="ir.ui.view">
+        <field name="name">fcm_registered_topics.tree</field>
+        <field name="model">fcm.registered.topics</field>
+        <field name="arch" type="xml">
+            <tree string="All FCM Topics" editable="top">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="fcm_registered_topics_action" model="ir.actions.act_window">
+        <field name="name">FCM Registered Topics</field>
+        <field name="res_model">fcm.registered.topics</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="fcm_registered_topics_view_tree"/>
+    </record>
+
+    <record id="smart_push_notification_view_form" model="ir.ui.view">
+        <field name="name">smart.push.notification.form</field>
+        <field name="model">smart.push.notification</field>
+        <field name="arch" type="xml">
+            <form string="Push Notification">
+                <header>
+                    <button name="action_confirm" states="draft" type="object" string="Confirm" class="oe_highlight"/>
+                    <button name="action_draft" states="cancel,hold" type="object" string="Set to Draft"/>
+                    <button name="action_hold" states="confirm" type="object" string="Set to Hold"/>
+                    <button name="action_confirm" states="hold" type="object" string="Release Hold" class="oe_highlight"/>
+                    <button name="action_cancel" states="draft,hold" type="object" string="Cancel"/>
+                    <button name="push_now" states="confirm" type="object" string="Push now" class="oe_highlight"/>
+                    <button name="duplicate_me" states="done" type="object" string="Duplicate" />
+                    <button name="push_now" states="error" type="object" string="Retry" class="oe_highlight"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirm,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_toggle" options='{"terminology": "archive"}'/>
+                        </button>
+                    </div>
+                    <field name="image" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <div class="oe_edit_only">
+                            <label for="name" string="Name"/>
+                        </div>
+                        <h1>
+                            <field name="name" default_focus="1" placeholder="Record name"/>
+                        </h1>
+                    </div>
+                    <br/>
+                    <br/>
+                    <separator string="Result" colspan="4" attrs="{'invisible': [('state', 'not in', ['done','error'])]}"/>
+                            <field name="summary" colspan="4" attrs="{'invisible': [('state', 'not in', ['done','error'])]}"/>
+                    <notebook>
+                        <page string="Information">
+                        <separator string="Content to be displayed in Push Notification" colspan="4"/>
+                            <field name="notification_title" colspan="4" placeholder="Title"/>
+                            <field name="notification_body" colspan="4" placeholder="Body"/>
+                        <separator string="Action to be triggered on click/touch" colspan="4"/>
+<!--                            <group>-->
+<!--                                <group>-->
+<!--                                    <field name="banner_action"/>-->
+<!--                                </group>-->
+<!--                                <group>-->
+<!--                                    <field name="product_id" attrs="{'invisible': [('banner_action', 'in', ['category','none',False,'custom'])], 'required': [('banner_action', '=', 'product')]}"/>-->
+<!--                                    <field name="category_id" attrs="{'invisible': [('banner_action', 'in', ['product','none',False,'custom'])], 'required': [('banner_action', '=', 'category')]}"/>-->
+<!--                                    <field name="product_ids" attrs="{'invisible': [('banner_action', 'in', ['product','none',False,'category'])], 'required': [('banner_action', '=', 'custom')]}" widget="many2many_tags"/>-->
+<!--                                </group>-->
+<!--                            </group>-->
+                        </page>
+                        <page string="Advanced">
+                            <separator string="Notification Type" colspan="4"/>
+                            <group>
+                                <group>
+                                    <field name="notification_type"/>
+                                </group>
+                                <group>
+                                    <field name="topic_id" attrs="{'invisible': [('notification_type', 'in', ['token-auto','token-manual'])], 'required': [('notification_type', '=', 'topic')]}" widget="selection"/>
+                                    <field name="device_ids" attrs="{'invisible': [('notification_type', 'in', ['topic','token-auto'])], 'required': [('notification_type', '=', 'token-manual')]}" widget="many2many_tags" quick_create="false"/>
+                                </group>
+                            </group>
+                            <separator string="Others" colspan="4"/>
+                            <group>
+                                <group>
+                                    <field name="activation_date" invisible="1"/>
+                                    <field name="notification_color"/>
+                                    <field name="notification_tag"/>
+                                </group>
+                                <group>
+                                    <field name="total_views" invisible="1"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="smart_push_notification_view_tree" model="ir.ui.view">
+        <field name="name">smart.push.notification.tree</field>
+        <field name="model">smart.push.notification</field>
+        <field name="arch" type="xml">
+            <tree string="Push Notifications" >
+                <field name="name"/>
+                <field name="activation_date" />
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="smart_push_notification_filter_view" model="ir.ui.view">
+        <field name="name">smart_push_notification.search.smart</field>
+        <field name="model">smart.push.notification</field>
+        <field name="arch" type="xml">
+            <search string="Smart VAN Push Notification">
+                <field name="name" string="Push Notification" filter_domain="[('name','ilike',self)]"/>
+                <separator/>
+                <filter string="Archived" name="inactive" domain="[('active','=',False)]"/>
+            </search>
+        </field>
+    </record>
+
+
+    <record id="smart_push_notification_action" model="ir.actions.act_window">
+        <field name="name">smart Push Notifications</field>
+        <field name="res_model">smart.push.notification</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="smart_push_notification_view_tree"/>
+        <field name="search_view_id" ref="smart_push_notification_filter_view"/>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to add a new Push Notification .
+          </p>
+        </field>
+    </record>
+
+        <record id="smart_push_notification_template_view_form" model="ir.ui.view">
+        <field name="name">smart.push.notification.template.form</field>
+        <field name="model">smart.push.notification.template</field>
+        <field name="arch" type="xml">
+            <form string="Push Notification Template">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_toggle" options='{"terminology": "archive"}'/>
+                        </button>
+                    </div>
+                    <field name="image" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <div class="oe_edit_only">
+                            <label for="name" string="Name"/>
+                        </div>
+                        <h1>
+                            <field name="name" default_focus="1" placeholder="Record name"/>
+                        </h1>
+                    </div>
+                    <notebook>
+                        <page string="Information">
+                        <separator string="Notification will be triggered automatically when" colspan="4"/>
+                            <group>
+                                <field name="condition" required="1"/>
+                            </group>
+                        <separator string="Content to be displayed in Push Notification" colspan="4"/>
+                            <field name="notification_title" colspan="4" placeholder="Title"/>
+                            <field name="notification_body" colspan="4" placeholder="Body"/>
+                        <separator string="Action to be triggered on click/touch" colspan="4"/>
+<!--                            <group>-->
+<!--                                <group>-->
+<!--                                    <field name="banner_action"/>-->
+<!--                                </group>-->
+<!--                                <group>-->
+<!--                                    <field name="product_id" attrs="{'invisible': [('banner_action', 'in', ['category','none',False,'custom'])], 'required': [('banner_action', '=', 'product')]}"/>-->
+<!--                                    <field name="category_id" attrs="{'invisible': [('banner_action', 'in', ['product','none',False,'custom'])], 'required': [('banner_action', '=', 'category')]}"/>-->
+<!--                                    <field name="product_ids" attrs="{'invisible': [('banner_action', 'in', ['product','none',False,'category'])], 'required': [('banner_action', '=', 'custom')]}" widget="many2many_tags"/>-->
+<!--                                </group>-->
+<!--                            </group>-->
+                        </page>
+                        <page string="Advanced">
+                            <group>
+                                <group>
+                                    <field name="notification_color"/>
+                                    <field name="notification_tag"/>
+                                </group>
+                                <group>
+                                    <field name="total_views" invisible="1"/>
+                                </group>
+                                <group>
+                                    <field name="device_id" widget="selection"/>
+
+                                </group>
+                                 <button name="dry_run" type="object" string="Dry run on" class="oe_highlight" style="width: 83px;position: relative;top: 8px;"/>
+                            </group>
+
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="smart_push_notification_template_view_tree" model="ir.ui.view">
+        <field name="name">smart.push.notification.template.tree</field>
+        <field name="model">smart.push.notification.template</field>
+        <field name="arch" type="xml">
+            <tree string="Push Notification Templates">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="smart_push_notification_templates_action" model="ir.actions.act_window">
+        <field name="name">Push Notifications Templates</field>
+        <field name="res_model">smart.push.notification.template</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to add a new Push Notification Templates.
+          </p>
+        </field>
+    </record>
+    
+    <record id="smart_api_view_form" model="ir.ui.view">
+        <field name="name">smart.form</field>
+        <field name="model">smart_api</field>
+        <field name="arch" type="xml">
+            <form string="Smart VAN APP Configuration">
+                <sheet>
+                    <div class="oe_title">
+                        <div class="oe_edit_only">
+                            <label for="name" string="Title"/>
+                        </div>
+                        <h1>
+                            <field name="name" default_focus="1" placeholder="Name"/>
+                        </h1>
+                    </div>
+                <notebook>
+                    <page string="Credentials">
+                        <group string="Smart API Configuration">
+                            <field name="api_key"/>
+                        </group>
+                        <group string="Android Push Notification Credentials">
+                            <field name="fcm_api_key"/>
+                        </group>
+                    </page>
+                    <page string="Advanced">
+                        <group>
+                            <group string="Pricelist/Currency">
+                                <field name="pricelist_id" required="1"/>
+                                <field name="currency_id"/>
+                            </group>
+                            <group string="Language">
+
+                                <field name="default_lang" widget="selection" required="1"/>
+                                <field name="company_id" widget="selection" required="1"/>
+                            </group>
+                            <group string="Extra Features">
+                                <field name="product_limit"/>
+                                <field name="color_scheme" string="Choose Combination"/>
+                             </group>
+                        </group>
+                    </page>
+                </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="smart_api_view_tree" model="ir.ui.view">
+        <field name="name">smart.tree</field>
+        <field name="model">smart_api</field>
+        <field name="arch" type="xml">
+            <tree string="Smart VAN API Configuration">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="smart_api_action" model="ir.actions.act_window">
+        <field name="name">Smart VAN API Configuration</field>
+        <field name="res_model">smart_api</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="smart_api_view_tree"/>
+    </record>
+
+    <menuitem
+            id="menu_smart_api_config_group"
+            name="Smart API Config "
+            parent="base.menu_administration"
+            sequence="1"
+            action="smart_api_action"
+            groups="smart_api.group_smart_api_manager"/>
+
+    <record id="smart_notification_massages_view_tree" model="ir.ui.view">
+        <field name="name">smart_notification_massages.tree</field>
+        <field name="model">smart.notification.messages</field>
+        <field name="arch" type="xml">
+            <tree string="Notification Messages">
+                <field name="name"/>
+                <field name="is_read"/>
+                <field name="user_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="smart_notification_massages_view_form" model="ir.ui.view">
+        <field name="name">smart_notification_massages.form</field>
+        <field name="model">smart.notification.messages</field>
+        <field name="arch" type="xml">
+            <form string="Notification Messages">
+               <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_toggle" options='{"terminology": "archive"}'/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" default_focus="1" placeholder="Record name"/>
+                        </h1>
+                    </div>
+                    <br/>
+                    <br/>
+
+                    <notebook>
+                        <page string="Information">
+                        <separator string="Content to be displayed in Notification Message" colspan="4"/>
+                            <field name="title" colspan="4" placeholder="Title"/>
+                            <separator/>
+                            <field name="subtitle" colspan="4" placeholder="Subtitle"/>
+                            <field name="body" colspan="4" placeholder="Body"/>
+                            <group>
+                                <group>
+                                    <field name="icon" widget="image" class="oe_avatar"/>
+                                </group>
+                                <group>
+                                    <field name="datatype"/>
+                                    <field name="is_read" />
+                                    <field name="user_id"/>
+                                    <field name="period" />
+                                </group>
+
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="smart_notification_massages_filter_view" model="ir.ui.view">
+        <field name="name"> Notification Messages Search</field>
+        <field name="model">smart.notification.messages</field>
+        <field name="arch" type="xml">
+            <search string="Notification Messages">
+                <field name="user_id"/>
+                <group expand="0" string="Group By">
+                        <filter string="User" name="user" context="{'group_by':'user_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="smart_notification_massages_templates_action" model="ir.actions.act_window">
+        <field name="name">Smart Notification Messages Action</field>
+        <field name="res_model">smart.notification.messages</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="smart_notification_massages_view_tree"/>
+        <field name="context">{'search_default_group_customer_id': 1}</field>
+
+        <field name="search_view_id" ref="smart_notification_massages_filter_view"/>
+    </record>
+
+
+</odoo>

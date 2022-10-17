@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="account_invoice_small_custom" model="ir.actions.report">
+            <field name="name">Salesperson Invoice</field>
+            <field name="model">account.move</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="paperformat_id" ref="custom_invoice_report.paperformat_custom_invoice_format_new"/>
+            <field name="report_name">custom_invoice_report.report_small_invoice_custom</field>
+            <field name="report_file">custom_invoice_report.report_small_invoice_custom</field>
+            <field name="print_report_name">(object._get_report_base_filename())</field>
+            <field name="attachment">(object.state in ('open','paid')) and ('INV'+(object.number or '').replace('/','')+'.pdf')</field>
+            <field name="groups_id" eval="[(4,ref('sales_team.group_sale_salesman'))]"/>
+        </record>
+    </data>
+
+</odoo>
+

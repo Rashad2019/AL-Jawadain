@@ -1,0 +1,70 @@
+
+<odoo>
+    <data>
+
+ <template id="iq_expiry_lot_template">
+        <t t-call="web.html_container">
+        
+                <t t-call="web.external_layout">
+                    <div class="page">
+                    
+                     <div class="text-left">
+              <strong>Date: </strong> <span t-esc="iq_date"/>
+         
+                </div>
+                
+                <div class="text-left">
+              <strong>Days: </strong> <span t-esc="iq_days_beforeexpiry"/>
+         
+                </div>
+                <br/>
+                <br/>
+                    <div class="text-center">
+                <h2>Products Lots Report</h2>
+                </div>
+                
+                <br/>
+                 <table class="table table-condensed" style="width:98.5%;border:1;" >
+		  	<thead>
+							<tr >
+							    <th >Lot Number</th>
+								<th >Product</th>
+								<th >Expiry Date</th>
+								<th >Qty</th>
+								
+							</tr>
+						</thead>
+						<tbody  >
+						<t t-foreach="lot_no" t-as="o">
+					<tr >
+					        <td ><span t-esc="lot_no[o]['name']"/></td>
+					         <td ><span t-esc="lot_no[o]['product']"/></td>
+					          <td ><span t-esc="lot_no[o]['ex_date']"/></td>
+					           <td ><span t-esc="lot_no[o]['qty']"/></td>
+					           </tr>
+					           </t>
+					           </tbody>
+					        
+						</table>
+						
+                    </div>
+                    </t>
+                    </t>
+                    </template>
+                    
+                    
+                    
+                      <report
+            id="iq_lot_expiry_receipt"
+            model="iq.lot.expiry.wizard"
+            string="Products Lots Alert"
+            report_type="qweb-pdf"
+            name="iq_alanwan_customs.iq_expiry_lot_template"
+            file="iq_alanwan_customs.iq_expiry_lot_template"
+           
+        />
+                    
+                    
+      </data>
+</odoo>
+                    

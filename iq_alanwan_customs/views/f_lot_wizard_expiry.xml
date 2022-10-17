@@ -1,0 +1,72 @@
+<odoo>
+
+
+
+
+
+	<record id="iq_wizard_lot_expiredview_form" model="ir.ui.view">
+		<field name="name">iq.custom.curren.lot.expired.form</field>
+		<field name="model">iq.lot.expiry.wizard</field>
+		<field name="arch" type="xml">
+			<form>
+					
+					
+					<group>
+
+						<group>
+						
+							<field name="iq_date" />
+							<field name="iq_days_beforeexpiry" />
+						</group>
+					</group>
+
+
+
+				<footer>
+					<button name="iq_get_product_expired" string="View Expired Lots"
+						type="object" class="btn-primary" />
+						
+						<button name="iq_get_product_alertexpired" string="View Close to expiration "
+						type="object" class="btn-primary" />
+						
+						
+						
+					<button special="cancel" string="Cancel" class="btn-default" />
+				</footer>
+			</form>
+		</field>
+	</record>
+
+
+
+
+
+	<record id="action_iq_lot_expired_report"
+		model="ir.actions.act_window">
+		<field name="name">Product Expired / Alert Lots Report </field>
+		<field name="res_model">iq.lot.expiry.wizard</field>
+		<field name="view_mode">form</field>
+		<field name="target">new</field>
+
+	</record>
+	
+	
+	
+	<record id="iq_lotexpired_autometic_cron" model="ir.cron">
+		<field name="name">Automatic Run After 7 days Expired Lots</field>
+		<field name="interval_number">1</field>
+		<field name="interval_type">days</field>
+		<field name="numbercall">-1</field>
+		<!-- <field name="nextcall" eval="(DateTime.now().replace(hour=2, minute=0) 
+			+ timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')" /> -->
+		<field name="doall" eval="False" />
+		<field name="model_id" ref="iq_alanwan_customs.model_iq_lot_expiry_wizard" />
+		<field name="code">model.iq_create_activity()</field>
+		<field name="state">code</field>
+	</record>
+	
+
+		
+
+<menuitem id="menu_iq_lot_expired_report_all" name="Product Expired / Alert Lots Report" action="action_iq_lot_expired_report" parent="stock.menu_warehouse_report"  sequence="210"/>
+</odoo>

@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_training1,hr1.training,model_hr_training,base.group_user,1,1,1,1
+access_hr_training,hr1.training1,model_employee_training,base.group_user,1,1,1,1
+access_hr_training2,hr1.training2,model_employee_punish,base.group_user,1,1,1,1
+access_hr_training3,hr1.training3,model_employee_punish_type,base.group_user,1,1,1,1

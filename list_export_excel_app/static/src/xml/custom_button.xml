@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates id="template" xml:space="preserve">
+	<t t-extend="ListView.buttons">
+	 	<t t-jquery=".o_list_buttons" t-operation="append">
+<!-- 	 		 <button type='button' class="btn btn-success button_export">
+	 		 	<i class="fa fa-file-excel-o"></i>
+	 		 </button> -->
+	 		 <button type='button' class="btn btn-success button_pdf">
+	 		 	<i class="fa fa-file-pdf-o"></i>
+	 		 </button>
+		</t>
+	</t>
+
+</templates>

@@ -1,0 +1,258 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* emp_fields
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e-20201202\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-06 08:12+0000\n"
+"PO-Revision-Date: 2022-07-06 11:13+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: ar\n"
+"X-Generator: Poedit 2.2.4\n"
+
+#. module: emp_fields
+#: model:ir.model.fields.selection,name:emp_fields.selection__hr_employee__perc_estehsal__1
+msgid "0.01"
+msgstr ""
+
+#. module: emp_fields
+#: model:ir.model.fields.selection,name:emp_fields.selection__hr_employee__perc_estehsal__2
+msgid "0.02"
+msgstr ""
+
+#. module: emp_fields
+#: model:ir.model.fields.selection,name:emp_fields.selection__hr_employee__perc_estehsal__25
+msgid "0.025"
+msgstr ""
+
+#. module: emp_fields
+#: model:ir.model.fields.selection,name:emp_fields.selection__hr_employee__perc_estehsal__5
+msgid "0.05"
+msgstr ""
+
+#. module: emp_fields
+#: model:ir.model.fields.selection,name:emp_fields.selection__hr_employee__perc_estehsal__75
+msgid "0.075"
+msgstr ""
+
+#. module: emp_fields
+#: model_terms:ir.ui.view,arch_db:emp_fields.hr_hr_employee_view_form1
+msgid "Collect Money"
+msgstr "التحصيلات"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_hr_employee__estehsal
+msgid "Collectd Money"
+msgstr "مبلغ التحصيلات"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_hr_employee__perc_estehsal
+msgid "Collectd Money Rate(%)"
+msgstr "نسبة التحصيلات(%)"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_solaf_solaf__create_uid
+#: model:ir.model.fields,field_description:emp_fields.field_wosolat_wosolat__create_uid
+msgid "Created by"
+msgstr "انشئ بواسطه"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_solaf_solaf__create_date
+#: model:ir.model.fields,field_description:emp_fields.field_wosolat_wosolat__create_date
+msgid "Created on"
+msgstr "انشئ بتاريخ"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_hr_employee__elahad
+msgid "Custody"
+msgstr "العهد"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:emp_fields.field_hr_leave__display_name
+#: model:ir.model.fields,field_description:emp_fields.field_solaf_solaf__display_name
+#: model:ir.model.fields,field_description:emp_fields.field_wosolat_wosolat__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_solaf_solaf__emp_ids
+#: model:ir.model.fields,field_description:emp_fields.field_wosolat_wosolat__emp_ids
+msgid "Emp"
+msgstr "الموظف"
+
+#. module: emp_fields
+#: model:ir.model,name:emp_fields.model_hr_employee
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_wosolat_wosolat__from1
+msgid "From"
+msgstr "من"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_hr_employee__id
+#: model:ir.model.fields,field_description:emp_fields.field_hr_leave__id
+#: model:ir.model.fields,field_description:emp_fields.field_solaf_solaf__id
+#: model:ir.model.fields,field_description:emp_fields.field_wosolat_wosolat__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_hr_employee__instrument_no
+msgid "Instrument No"
+msgstr "رقم التأمين"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_hr_employee__job_name
+#: model_terms:ir.ui.view,arch_db:emp_fields.hr_hr_employee_view_form1
+msgid "Job Name"
+msgstr "المسمى الوظيفي"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_hr_employee____last_update
+#: model:ir.model.fields,field_description:emp_fields.field_hr_leave____last_update
+#: model:ir.model.fields,field_description:emp_fields.field_solaf_solaf____last_update
+#: model:ir.model.fields,field_description:emp_fields.field_wosolat_wosolat____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_solaf_solaf__write_uid
+#: model:ir.model.fields,field_description:emp_fields.field_wosolat_wosolat__write_uid
+msgid "Last Updated by"
+msgstr "اخر تحديث بواسطه"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_solaf_solaf__write_date
+#: model:ir.model.fields,field_description:emp_fields.field_wosolat_wosolat__write_date
+msgid "Last Updated on"
+msgstr "اخر تحديث في"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_solaf_solaf__solaf
+msgid "Loan Amount"
+msgstr "مبلغ السلفة"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_solaf_solaf__date2
+msgid "Loan End Date"
+msgstr "تاريخ انتهاء السلفة"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_solaf_solaf__date1
+msgid "Loan Receipt Date"
+msgstr "تاريخ استلام السلفة"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_hr_employee__solaf_ids
+#: model_terms:ir.ui.view,arch_db:emp_fields.hr_hr_employee_view_form1
+msgid "Loans"
+msgstr "السلف"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_hr_employee__manager_user_id
+#: model:ir.model.fields,field_description:emp_fields.field_hr_leave__manager_user_id
+msgid "Manager User"
+msgstr "المدير"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_solaf_solaf__kest
+msgid "Monthly Installment"
+msgstr "القسط الشهري"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_hr_employee__notes
+#: model_terms:ir.ui.view,arch_db:emp_fields.hr_hr_employee_view_form1
+msgid "Notes"
+msgstr "الملاحظات"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_wosolat_wosolat__date1
+msgid "Receipt Date"
+msgstr "تاريخ الاستلام"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_hr_employee__wosolat_ids
+#: model_terms:ir.ui.view,arch_db:emp_fields.hr_hr_employee_view_form1
+msgid "Receipts Entries"
+msgstr "دفتر الوصولات"
+
+#. module: emp_fields
+#: model:ir.model.fields,help:emp_fields.field_hr_employee__manager_user_id
+#: model:ir.model.fields,help:emp_fields.field_hr_leave__manager_user_id
+msgid "Related user name for the resource to manage its access."
+msgstr ""
+
+#. module: emp_fields
+#: model_terms:ir.ui.view,arch_db:emp_fields.hr_hr_employee_view_form1
+msgid "Sales"
+msgstr "المبيعات"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_hr_employee__perc_sales_total
+msgid "Sales Rate (%)"
+msgstr "نسبة المبيعات(%)"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_hr_employee__sales_total
+msgid "Sales Total"
+msgstr "مبلغ المبيعات"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_hr_leave__substitute_employee_id
+msgid "Substitute employee"
+msgstr "الموظف البديل"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_hr_employee__elhadaf
+msgid "Target"
+msgstr "الهدف"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_hr_employee__perc_hadaf
+msgid "Target Rate (%)"
+msgstr "نسبة الهدف(%)"
+
+#. module: emp_fields
+#: model_terms:ir.ui.view,arch_db:emp_fields.hr_hr_employee_view_form1
+msgid "Targets"
+msgstr "الاهداف"
+
+#. module: emp_fields
+#: model:ir.model,name:emp_fields.model_hr_leave
+msgid "Time Off"
+msgstr "الاجازات"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_wosolat_wosolat__to1
+msgid "To"
+msgstr "الى"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_hr_employee__total_estehsal
+msgid "Total Collected Money"
+msgstr "اجمالي التحصيلات"
+
+#. module: emp_fields
+#: model:ir.model.fields,field_description:emp_fields.field_hr_employee__amount
+msgid "amount"
+msgstr "المبلغ"
+
+#. module: emp_fields
+#: model:ir.model,name:emp_fields.model_solaf_solaf
+msgid "solaf.solaf"
+msgstr ""
+
+#. module: emp_fields
+#: model:ir.model,name:emp_fields.model_wosolat_wosolat
+msgid "wosolat.wosolat"
+msgstr ""

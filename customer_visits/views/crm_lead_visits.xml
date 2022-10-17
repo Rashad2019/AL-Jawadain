@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="crm_lead_visit" model="ir.ui.view">
+        <field name="name">crm.lead.visit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form" />
+        <field name="arch" type="xml">
+                <xpath expr="//notebook[last()]" position="inside">
+                    <page string="Customer Visits" attrs="{'invisible': [('active','=',False)]}" name="customer_visits">
+                        <group>
+                            <field name="visits_ids" context="{'default_user_id': uid,'default_customer_id': partner_id,'search_default_customer_id': [partner_id]}">
+                                <tree edit="false" create="false">
+                                    <field name="meeting_person_name"/>
+                                    <field name="meeting_person_phone"/>
+                                    <field name="visit_type" />
+                                    <field name="user_id"/>
+                                    <field name="show_date" widget="date"/>
+                                     <field name="visit_date" widget="date"/>
+                                    <field name="next_visit" widget="date"/>
+                                    <field name="state"  widget="badge" decoration-success="state == 'done'"
+                                        decoration-warning="state == 'waiting'" decoration-info="state == 'draft' or state == 'assigned'"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                </xpath>
+        </field>
+    </record></odoo>

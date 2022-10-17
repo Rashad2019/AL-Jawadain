@@ -1,0 +1,49 @@
+<odoo>
+    <!-- actions -->
+    <record id="action_wizard_hr_attendance_import" model="ir.actions.act_window">
+        <field name="name">Import Attendance</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.attendance.import</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- views -->
+
+    <record id="view_wizard_hr_attendance_import" model="ir.ui.view">
+        <field name="model">hr.attendance.import</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form name="hr_attendance_import_form" string="Attendance Import">
+                <field name="data" filename="name" />
+                <label for="name" name="filename" string="-> Filename:" />
+                <field name="name" />
+                <group name="import_group1" invisible="1">
+                    <field name="input_format" widget="radio" />
+                </group>
+
+                <group name="import_group2" col="6" invisible="1">
+                    <group name="import_group2_1" colspan="2">
+                        <field name="lineterminator" />
+                        <field name="delimeter" />
+                        <field name="fieldname_header" />
+                    </group>
+
+                    <group name="import_group2_2" colspan="2" invisible="1">
+                        <field name="employee_id_format" />
+                    </group>
+                </group>
+
+                <footer>
+                    <button name="button_wizard_hr_attendance_import"
+                            type="object"
+                            class="oe_highlight"
+                            string="Import"
+                    />
+                    <button string="Cancel" class="btn btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
+

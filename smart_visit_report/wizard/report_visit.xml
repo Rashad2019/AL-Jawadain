@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+		<template id="visit_report">
+			<t t-call="web.html_container">
+				<t t-call="web.external_layout">
+					<div class="page">											
+						<div class="container">							
+							<h4 style="color: #006400;  text-align: center;">
+								Visit Report <t t-esc="zone_names"/>   <t t-if="user_names"> For  <t t-esc="user_names"/>  </t>
+							</h4>
+							<t t-if="customers_names">
+								<h4 style="color: #006400;  text-align: center;">
+									Customers <t t-esc="customers_names"/>
+								</h4>
+							</t>
+							<t t-if="start_dt or end_dt">
+
+								<h4 style="color: #006400;  text-align: center;">
+									Visits Date
+									<t t-if="start_dt">
+										From: <t t-esc="start_dt"/>
+									</t>
+									<t t-if="end_dt">
+										TO: <t t-esc="end_dt"/>
+									</t>
+								</h4>
+							</t>
+							<t t-if="sh_start_dt or sh_end_dt">
+
+								<h4 style="color: #006400;  text-align: center;">
+									Send Date
+									<t t-if="sh_start_dt">
+										From: <t t-esc="sh_start_dt"/>
+									</t>
+									<t t-if="sh_end_dt">
+										TO: <t t-esc="sh_end_dt"/>
+									</t>
+								</h4>
+							</t>
+							<br/>
+							<br/>								
+							 <table class="table table-condensed able table-striped">
+								<thead>
+									<tr>
+										<th colspan="2" >Customer</th>
+										<th colspan="2" >Sales Person</th>
+										<th>Zone</th>
+										<th>Visit Type</th>
+										<th>Visit State</th>
+										<th style="text-align:right;" >Visit Date</th>
+										<th style="text-align:right;" >Send Date</th>
+
+								</tr></thead>
+								<tbody>
+
+								<t t-foreach="visits_data" t-as="u">
+										<tr>
+											<td colspan="2"><t t-esc="u['customer']"/></td>
+											<td colspan="2"><t t-esc="u['salesperson']"/></td>
+											<td ><t t-esc="u['zone']"/></td>
+											<td ><t t-esc="u['visit_type']"/></td>
+											<td ><t t-esc="u['visit_state']"/></td>
+											<td style="text-align:right;"><t t-options='{"widget": "date"}' t-esc="u['visit_date']"/></td>
+											<td style="text-align:right;"><t t-options='{"widget": "date"}' t-esc="u['show_date']"/></td>
+										</tr>
+
+									</t>
+								</tbody>
+							</table>
+						</div>
+						<hr/>
+					</div>
+				</t>
+			</t>
+		</template>
+
+		<record id="visit_format" model="report.paperformat">
+			<field name="name">Visits Report</field>
+			<field name="default" eval="True" />
+			<field name="format">custom</field>			
+			<field name="margin_top">40</field>
+			<field name="margin_bottom">10</field>
+			<field name="margin_left">5</field>
+			<field name="margin_right">5</field>
+			<field name="header_line" eval="False" />
+			<field name="orientation">Portrait</field>
+			<field name="header_spacing">36</field>
+			<field name="dpi">110</field>
+		</record>
+</odoo>

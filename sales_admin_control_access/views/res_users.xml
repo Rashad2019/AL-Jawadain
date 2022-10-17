@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_users_sales_admin_team" model="ir.ui.view">
+        <field name="name">res.users.sales.admin.team</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_simple_form" />
+        <field name="groups_id" eval="[(4, ref('sales_team.group_sale_manager'))]"/>
+        <field name="arch" type="xml">
+             <xpath expr="//group[@name='phone_numbers']" position="after">
+                 <div>
+                     <strong>Is SalesPerson ? </strong>
+                     <span  title="Is SalesPerson ?">
+                        <field  name="is_sales_person_control"  widget="boolean" />
+                     </span>
+                 </div>
+                 <div>
+                     <strong>Disable Discount Access On Sales ?</strong>
+                     <span  title="Disable Discount Access On Sales">
+                        <field  name="have_discount_access_control"  widget="boolean" />
+                     </span>
+                 </div>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

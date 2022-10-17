@@ -25,6 +25,7 @@
             'smart_arabic_font/static/src/css/report_style.css',
 
         ],
+
         'data': [
             # "views/linkestatic.xml",
         ],

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="specify_sales_journal_to_users" model="ir.ui.view">
+        <field name="name">specify.sales.journal.to.users</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form" />
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]"/>
+        <field name="arch" type="xml">
+             <xpath expr="//group[@name='messaging']" position="before">
+                 <group name="Journal" string="Specifying Sales Journal to User">
+                     <field  name="assigned_journal_id"
+                             string="Account Journal"
+                             options="{'no_create': True}"
+                     />
+                 </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

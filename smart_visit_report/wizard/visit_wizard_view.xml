@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="action_customer_visit_report" model="ir.actions.report">
+		<field name="name">Visits Report</field>
+		<field name="model">customer.visit.report.wizard</field>
+		<field name="report_type">qweb-pdf</field>
+		<field name="report_name">smart_visit_report.visit_report</field>
+		<field name="report_file">smart_visit_report.visit_report</field>
+		<field name="binding_type">report</field>
+		<field name="paperformat_id" ref="smart_visit_report.visit_format"/>
+	</record>
+	<record id="view_customer_visit_wizard" model="ir.ui.view">
+		<field name="name">customer.visit.report.wizard</field>
+		<field name="model">customer.visit.report.wizard</field>
+		<field name="arch" type="xml">
+			<form string="Visits Report">
+				<group>
+<!--						<field name="pos_session_ids" widget="many2many_tags"  domain="[('config_id', 'in', pos_config_ids),('start_at', '&gt;=', start_dt),('stop_at', '&lt;=', end_dt)]" String="Sessions(s)" />-->
+					<field name="zone_id" required="1"  String="Zone" />
+					<field name="user_id" domain="[('zone_id', 'in', zone_id)]" String="Sales Person" />
+					<field name="customer_ids" domain="[('zone_id', 'in', zone_id)]" widget="selection"   String="Customers" />
+					<field name="company_id" invisible="1"/>
+				</group>
+				<group>
+					<group>
+						<field name="start_dt"/>
+						<field name="end_dt"/>
+					</group>
+				</group>
+				<group>
+					<group>
+						<field name="sh_start_dt"/>
+						<field name="sh_end_dt"/>
+					</group>
+				</group>
+
+				<footer>
+					<button name="print_excel_report" string="Print XLS" type="object" class="btn-primary"/>
+					<button name="print_pdf_report" string="Print PDF" type="object" class="btn-primary"/>
+					<button string="Cancel" class="btn-default" special="cancel" />
+				</footer>
+			</form>
+		</field>
+	</record>
+	<record id="action_report_visit" model="ir.actions.act_window">
+		<field name="name">Visits Report</field>
+		<field name="res_model">customer.visit.report.wizard</field>
+		<field name="view_mode">form</field>
+		<field name="target">new</field>
+	</record>
+	<menuitem
+			id="menu_visit_report"
+			name="Visit Report"
+			action="action_report_visit"
+			groups="sales_team.group_sale_manager"
+			parent="crm.crm_menu_report"
+			sequence="6"
+	/>
+	<record id="view_visit_xls" model="ir.ui.view">
+		<field name="name">visit.excel.report.xls</field>
+		<field name="model">visit.excel.report</field>
+		<field name="arch" type="xml">
+			<form string="Visits Report">
+				<group>
+					<group>
+						<field name="file_name" />
+						<field name="excel_file" filename="file_name"/>
+					</group>
+				</group>
+				<footer>
+					<button string="Cancel" class="btn-default" special="cancel" />
+				</footer>
+			</form>
+		</field>
+	</record>
+</odoo>
+

@@ -1,0 +1,49 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* read_only_user
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0-20211223\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-22 09:10+0000\n"
+"PO-Revision-Date: 2022-05-22 12:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: ar\n"
+"X-Generator: Poedit 2.2.4\n"
+
+#. module: read_only_user
+#: code:addons/read_only_user/models/models.py:0
+#, python-format
+msgid "Access Denied Contact your administrator to allows this operation"
+msgstr "تم رفض الوصول اتصل بالمسؤول للسماح بهذه العملية"
+
+#. module: read_only_user
+#: model:ir.model,name:read_only_user.model_base
+msgid "Base"
+msgstr "أساس"
+
+#. module: read_only_user
+#: model:ir.model.fields,field_description:read_only_user.field_res_users__read_only_user
+msgid "Read Only User"
+msgstr "قراءة المستخدم فقط"
+
+#. module: read_only_user
+#: model_terms:ir.ui.view,arch_db:read_only_user.inherited_view_users_form_view
+msgid "Set Read Only"
+msgstr "تعيين للقراءة فقط"
+
+#. module: read_only_user
+#: model_terms:ir.ui.view,arch_db:read_only_user.inherited_view_users_form_view
+msgid "Unset Read Only"
+msgstr "إلغاء تعيين للقراءة فقط"
+
+#. module: read_only_user
+#: model:ir.model,name:read_only_user.model_res_users
+msgid "Users"
+msgstr "المستخدمون"

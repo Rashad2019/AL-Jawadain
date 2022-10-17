@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<odoo>
+        <record id="customer_ledger_wizard_view_form" model="ir.ui.view">
+            <field name="name">customer.ledger.wizard.form</field>
+            <field name="model">customer.ledger.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Customers Ledger">
+                    <group class="oe_title">
+                        <field name="user_id" required="1"/>
+                    </group>
+                    <footer>
+                        <button name="action_show_customer_ledger" string="Submit" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="customer_ledger_wizard_action" model="ir.actions.act_window">
+            <field name="name">Customers Ledger</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">customer.ledger.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="customer_ledger_wizard_view_form"/>
+            <field name="target">new</field>
+        </record>
+
+    <menuitem
+        id="menu_view_customer_ledger_wizard"
+        name="Customer Ledger"
+        parent="account_reports.account_reports_partners_reports_menu"
+        action="customer_ledger_wizard_action"
+        sequence="5" groups="account.group_account_readonly,account.group_account_invoice"
+    />
+</odoo>

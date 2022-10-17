@@ -1,0 +1,149 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_personal_equipment_stock
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e-20201202\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-06 21:37+0000\n"
+"PO-Revision-Date: 2022-07-07 00:40+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.1\n"
+
+#. module: hr_personal_equipment_stock
+#: model:ir.model,name:hr_personal_equipment_stock.model_hr_personal_equipment
+msgid "Adds personal equipment information and allocation"
+msgstr "يضيف معلومات المعدات المكتبية و المخصصات"
+
+#. module: hr_personal_equipment_stock
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_hr_personal_equipment__qty_delivered
+msgid "Delivered Quantity"
+msgstr "الكمية المستلمة"
+
+#. module: hr_personal_equipment_stock
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_hr_personal_equipment__display_name
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_hr_personal_equipment_request__display_name
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_procurement_group__display_name
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_stock_location__display_name
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_stock_move__display_name
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_stock_picking__display_name
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_stock_rule__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: hr_personal_equipment_stock
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_stock_move__personal_equipment_id
+msgid "Employee Personal Equipment"
+msgstr "المعدات المكتبية للموظفين"
+
+#. module: hr_personal_equipment_stock
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_procurement_group__equipment_request_id
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_stock_picking__equipment_request_id
+msgid "Equipment Request"
+msgstr "طلب معدات مكتبية"
+
+#. module: hr_personal_equipment_stock
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_hr_personal_equipment__id
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_hr_personal_equipment_request__id
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_procurement_group__id
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_stock_location__id
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_stock_move__id
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_stock_picking__id
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_stock_rule__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: hr_personal_equipment_stock
+#: model:ir.model,name:hr_personal_equipment_stock.model_stock_location
+msgid "Inventory Locations"
+msgstr "مواقع المخزون"
+
+#. module: hr_personal_equipment_stock
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_stock_location__is_personal_equipment_location
+msgid "Is personal equipment location?"
+msgstr "مخزن متطلبات الموظفين"
+
+#. module: hr_personal_equipment_stock
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_hr_personal_equipment____last_update
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_hr_personal_equipment_request____last_update
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_procurement_group____last_update
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_stock_location____last_update
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_stock_move____last_update
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_stock_picking____last_update
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_stock_rule____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: hr_personal_equipment_stock
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_hr_personal_equipment__location_id
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_hr_personal_equipment_request__location_id
+msgid "Location"
+msgstr "المخزن"
+
+#. module: hr_personal_equipment_stock
+#: model:ir.model.fields,help:hr_personal_equipment_stock.field_hr_personal_equipment__procurement_group_id
+#: model:ir.model.fields,help:hr_personal_equipment_stock.field_hr_personal_equipment_request__procurement_group_id
+msgid ""
+"Moves created through this stock request will be put in this procurement "
+"group. If none is given, the moves generated by procurement rules will be "
+"grouped into one big picking."
+msgstr ""
+
+#. module: hr_personal_equipment_stock
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_hr_personal_equipment_request__picking_ids
+msgid "Picking"
+msgstr "التسليم"
+
+#. module: hr_personal_equipment_stock
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_hr_personal_equipment_request__picking_count
+msgid "Picking Count"
+msgstr "عدد الاستلامات"
+
+#. module: hr_personal_equipment_stock
+#: model_terms:ir.ui.view,arch_db:hr_personal_equipment_stock.hr_personal_equipment_request_form_view_picking
+msgid "Pickings"
+msgstr "الاستلامات"
+
+#. module: hr_personal_equipment_stock
+#: model:ir.model,name:hr_personal_equipment_stock.model_procurement_group
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_hr_personal_equipment__procurement_group_id
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_hr_personal_equipment_request__procurement_group_id
+msgid "Procurement Group"
+msgstr "مجموعة التوريدات"
+
+#. module: hr_personal_equipment_stock
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_hr_personal_equipment__skip_procurement
+msgid "Skip Procurement"
+msgstr "تخطي التوريدات"
+
+#. module: hr_personal_equipment_stock
+#: model:ir.model,name:hr_personal_equipment_stock.model_stock_move
+msgid "Stock Move"
+msgstr "حركة المخزون"
+
+#. module: hr_personal_equipment_stock
+#: model:ir.model.fields,field_description:hr_personal_equipment_stock.field_hr_personal_equipment__move_ids
+msgid "Stock Moves"
+msgstr "حركات المخزون"
+
+#. module: hr_personal_equipment_stock
+#: model:ir.model,name:hr_personal_equipment_stock.model_stock_rule
+msgid "Stock Rule"
+msgstr "قاعدة المخزون"
+
+#. module: hr_personal_equipment_stock
+#: model:ir.model,name:hr_personal_equipment_stock.model_hr_personal_equipment_request
+msgid "This model allows to create a personal equipment request"
+msgstr "يسمح هذا النموذج بإنشاء طلب معدات مكتبية"
+
+#. module: hr_personal_equipment_stock
+#: model:ir.model,name:hr_personal_equipment_stock.model_stock_picking
+msgid "Transfer"
+msgstr "الشحنة"

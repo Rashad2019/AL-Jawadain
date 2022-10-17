@@ -1,0 +1,53 @@
+<odoo>
+    <!-- views -->
+    <record id="view_wizard_hr_attendance_search_checkout" model="ir.ui.view">
+        <field name="name">view.wizard.hr.attendance.search.checkout</field>
+        <field name="model">hr.attendance.search.checkout</field>
+        <field name="arch" type="xml">
+            <form name="hr_attendance_search_checkout_form"
+                  string="Search checkout for checkin">
+                <sheet>
+                    <p class="oe_grey" name="text">
+                        This process will attempt to find the employee's
+                        output consecutive to the date and time of entry.
+                        The processing time will depend on the number of
+                        records selected.
+                        Please remove unwanted assistance from the list
+                        by pressing the trash button. When finish then press
+                        the confirm button to continue creating the new
+                        assists.
+                    </p>
+
+                    <h1>Attendance</h1>
+                    <field name="line_ids">
+
+                        <tree create="false" edit="false" editable="bottom">
+                            <field name="employee_id" />
+                            <field name="check_in" />
+                            <field name="check_out" />
+                        </tree>
+                    </field>
+                </sheet>
+                <footer>
+                    <button name="button_wizard_hr_attendance_search_checkout"
+                            type="object"
+                            class="oe_highlight"
+                            string="Confirm Attendance"
+                    />
+                    <button string="Cancel" class="btn btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Definir vista para lineas -->
+
+    <!-- actions -->
+
+    <record id="action_search_ckeckout" model="ir.actions.act_window">
+        <field name="name">Search checkout</field>
+        <field name="res_model">hr.attendance.search.checkout</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

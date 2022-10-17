@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+	
+	<template id="webclient_bootstrap" name="Web Client" inherit_id="web.webclient_bootstrap">
+        <xpath expr="//t[@t-set='body_classname']" position="after">
+            <t t-if="request.env.user.hide_chatter " >
+                <t t-set="body_chatter_classname" t-value="'mk_chatter_position_hide'"/>
+                <t t-set="body_classname" t-value="'%s %s' % (body_classname, body_chatter_classname)"/>
+            </t>
+            <t t-if="request.env.user.hide_chatter_on_products " >
+                <t t-set="body_chatter_classname" t-value="'mk_chatter_position_hide_on_product'"/>
+                <t t-set="body_classname" t-value="'%s %s' % (body_classname, body_chatter_classname)"/>
+            </t>
+        </xpath>
+    </template>
+	
+</odoo>

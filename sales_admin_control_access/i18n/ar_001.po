@@ -1,0 +1,64 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sales_admin_control_access
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e-20201202\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-26 17:28+0000\n"
+"PO-Revision-Date: 2022-06-26 20:29+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: ar\n"
+"X-Generator: Poedit 2.2.4\n"
+
+#. module: sales_admin_control_access
+#: model_terms:ir.ui.view,arch_db:sales_admin_control_access.res_users_sales_admin_team
+msgid "<strong>Disable Discount Access On Sales ?</strong>"
+msgstr "<strong>تعطيل الوصول إلى الخصم على المبيعات؟</strong>"
+
+#. module: sales_admin_control_access
+#: model_terms:ir.ui.view,arch_db:sales_admin_control_access.res_users_sales_admin_team
+msgid "<strong>Is SalesPerson ? </strong>"
+msgstr "<strong>هل هو مندوب المبيعات؟</strong>"
+
+#. module: sales_admin_control_access
+#: model_terms:ir.ui.view,arch_db:sales_admin_control_access.res_users_sales_admin_team
+msgid "Disable Discount Access On Sales"
+msgstr "تعطيل الوصول إلى الخصم على المبيعات"
+
+#. module: sales_admin_control_access
+#: model:ir.model.fields,field_description:sales_admin_control_access.field_res_users__have_discount_access_control
+msgid "Disable Discount Access On Sales ?"
+msgstr "تعطيل الوصول إلى الخصم على المبيعات؟"
+
+#. module: sales_admin_control_access
+#: model:ir.model.fields,field_description:sales_admin_control_access.field_res_users__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: sales_admin_control_access
+#: model:ir.model.fields,field_description:sales_admin_control_access.field_res_users__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: sales_admin_control_access
+#: model:ir.model.fields,field_description:sales_admin_control_access.field_res_users__is_sales_person_control
+#: model_terms:ir.ui.view,arch_db:sales_admin_control_access.res_users_sales_admin_team
+msgid "Is SalesPerson ?"
+msgstr "هل هو مندوب المبيعات؟"
+
+#. module: sales_admin_control_access
+#: model:ir.model.fields,field_description:sales_admin_control_access.field_res_users____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: sales_admin_control_access
+#: model:ir.model,name:sales_admin_control_access.model_res_users
+msgid "Users"
+msgstr "المستخدمون"

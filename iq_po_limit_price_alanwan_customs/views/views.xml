@@ -1,0 +1,18 @@
+<odoo>
+  <data>
+
+
+ 
+  <record model="ir.module.category" id="f_po_pricesacceacs_module_category">
+		<field name="name">No Limit On Purchase Order Amount </field>
+		<field name="sequence">290</field>
+	
+	</record>      
+		<record id="f_popricelimitcaccess_group_id" model="res.groups">
+			<field name="name">Yes</field>
+			<field name="category_id"
+				ref="iq_po_limit_price_alanwan_customs.f_po_pricesacceacs_module_category" />
+		</record>
+		
+  </data>
+</odoo>

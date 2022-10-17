@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_hr_employee_view_with_access_form1" model="ir.ui.view">
+            <field name="name">hr.employee.view.with.access.form.inherit1</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="groups_id" eval="[(6,0, (ref('hr.group_hr_manager'),ref('hr.group_hr_user')))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='elhadaf']" position="attributes">
+                    <attribute name="readonly">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='perc_hadaf']" position="attributes">
+                    <attribute name="readonly">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='sales_total']" position="attributes">
+                    <attribute name="readonly">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='perc_sales_total']" position="attributes">
+                    <attribute name="readonly">True</attribute>
+                </xpath>
+                <xpath expr="//page[@name='Collect Money']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//page[@name='Receipts Entries']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='solaf_ids']" position="attributes">
+                    <attribute name="readonly">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='solaf_ids']//field[@name='solaf']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='solaf_ids']//field[@name='date1']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='solaf_ids']//field[@name='date2']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="hr_hr_employee_view_with_access_sales_form" model="ir.ui.view">
+            <field name="name">hr.employee.view.with.access.sales.form.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="groups_id" eval="[(4,ref('sales_team.group_sale_manager'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='elhadaf']" position="attributes">
+                    <attribute name="readonly">False</attribute>
+                </xpath>
+                <xpath expr="//field[@name='perc_hadaf']" position="attributes">
+                    <attribute name="readonly">False</attribute>
+                </xpath>
+                <xpath expr="//field[@name='sales_total']" position="attributes">
+                    <attribute name="readonly">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='perc_sales_total']" position="attributes">
+                    <attribute name="readonly">False</attribute>
+                </xpath>
+                <xpath expr="//page[@name='Collect Money']" position="attributes">
+                    <attribute name="invisible">False</attribute>
+                </xpath>
+                <xpath expr="//page[@name='Receipts Entries']" position="attributes">
+                    <attribute name="invisible">False</attribute>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
